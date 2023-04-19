@@ -2,11 +2,15 @@
   "name": "@types/musickit",
   "version": "1.0.0",
   "description": "Typescript types for Cider's Usage of Apple's MusicKit",
-  "main": "index.js",
+  "repository": "ciderapp/musickit-types",
+  "types": "./types/index.d.ts",
+  "author": "CiderCollective",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "tslint **/*.d.ts"
   },
-  "author": "",
-  "license": "ISC",
-  "types": "./index.d.ts"
+  "devDependencies": {
+    "tslint": "^5.12.1",
+    "typescript": "^5.0.4"
+  }
 }
