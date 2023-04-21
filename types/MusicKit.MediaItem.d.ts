@@ -123,7 +123,7 @@ declare namespace MusicKit {
     /**
      * The type of the media item.
      */
-    type: any;
+    readonly type: any;
     /**
      * Relationships of the media item
      */
@@ -237,5 +237,9 @@ declare namespace MusicKit {
      * The URL of the media item.
      */
     readonly url: { [key: string]: any };
+    /**
+     * The editorial kind of the media item.
+     */
+    readonly editorialElementKind?: Number
   }
 }
