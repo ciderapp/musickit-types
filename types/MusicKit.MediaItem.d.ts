@@ -240,6 +240,10 @@ declare namespace MusicKit {
     /**
      * The editorial kind of the media item.
      */
-    readonly editorialElementKind?: Number
+    readonly editorialElementKind?: number
+    /**
+     * The editorial elements display style.
+     */
+    readonly displayStyle: string
   }
 }
