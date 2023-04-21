@@ -244,6 +244,6 @@ declare namespace MusicKit {
     /**
      * The editorial elements display style.
      */
-    readonly displayStyle: string
+    readonly displayStyle?: string
   }
 }
