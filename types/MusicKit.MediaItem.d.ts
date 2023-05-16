@@ -132,8 +132,22 @@ declare namespace MusicKit {
      * A Boolean value that indicates whether the item is a cloud upload.
      */
     readonly isCloudUpload: boolean;
+    /**
+     * The ID of the media item.
+     * @deprecated
+     */
     readonly _songId: string;
+
+    /**
+     * Also the ID of the media item.
+     * @deprecated
+     */
     readonly songId: string;
+
+    /**
+     * he flavor of the media item. Can be used to determine the bitrate of the media item.
+     */
+    readonly flavor: string;
   }
 
   /**
