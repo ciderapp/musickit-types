@@ -95,7 +95,7 @@ declare namespace MusicKit {
   /**
    * Configure a MusicKit instance.
    */
-  function configure(configuration: Configuration): MusicKitInstance;
+  function configure(configuration: Configuration): Promise<MusicKitInstance>;
 
   /**
    * Returns the configured MusicKit instance.
