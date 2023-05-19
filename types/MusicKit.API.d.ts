@@ -554,20 +554,26 @@ declare namespace MusicKit {
    */
   interface API {
     /**
+     * Search for resources, using the v3 REST API.
+     */
+    v3(path: string, parameters?: QueryParameters): Promise<unknown>;
+
+    /**
      * An instance of the Cloud library.
      */
     library: Library;
+
     /**
      * The storefront used for making calls to the API.
      */
     storefrontId: string;
 
-    personalSocialProfile: any;
-
     /**
-     * Search for resources, using the v3 REST API.
+     * Apple Music Social Profile for the currently authenticated user.
      */
-    v3: any;
+    personalSocialProfile: SocialProfile;
+
+
 
     /**
      * Fetch one or more activities using their identifiers.
