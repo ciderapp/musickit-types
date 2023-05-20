@@ -556,7 +556,8 @@ declare namespace MusicKit {
     /**
      * Search for resources, using the v3 REST API.
      */
-    v3: v3;
+    v3: any;
+    // v3: v3;
 
     /**
      * An instance of the Cloud library.
