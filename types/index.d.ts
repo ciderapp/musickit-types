@@ -3,6 +3,7 @@
 
 /// <reference path="MusicKit.d.ts" />
 /// <reference path="MusicKit.API.d.ts" />
+/// <reference path="MusicKit.API.v3.d.ts" />
 /// <reference path="MusicKit.Events.d.ts" />
 /// <reference path="MusicKit.Library.d.ts" />
 /// <reference path="MusicKit.MediaItem.d.ts" />
