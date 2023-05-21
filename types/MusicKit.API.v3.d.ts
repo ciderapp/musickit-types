@@ -20,13 +20,15 @@ declare namespace MusicKit {
     "v1/storefronts": MusicKit.Storefronts[];
   }
 
+  type ResourceTypes = "songs" | "albums" | "artists" | "playlists" | "storefronts";
+
 
   // Query Response Template
   interface QueryResponse<T = unknown> {
     data: {
       data?: T;
       resources?: {
-        [key: string]: Resource;
+        [key in ResourceTypes]?: { [key: string]: Resource };
       };
       next?: string;
       meta?: {
