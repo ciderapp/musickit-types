@@ -16,6 +16,8 @@ declare namespace MusicKit {
 
     "v1/me/library/playlists": MusicKit.Playlists[];
     "v1/me/library/playlists/*": MusicKit.Playlists[];
+
+    "v1/storefronts": MusicKit.Storefronts[];
   }
 
 
@@ -37,7 +39,9 @@ declare namespace MusicKit {
 
   // Start of the v3 interface
   interface v3 {
-    music<T extends keyof apiRoutes>(route: T, parameters?: QueryParameters): Promise<QueryResponse<apiRoutes[T]>>;
+    // music<T extends keyof apiRoutes>(route: T, parameters?: QueryParameters): Promise<QueryResponse<apiRoutes[T]>>;
+
+    music<T extends keyof apiRoutes>(route: T | string, parameters?: QueryParameters): Promise<QueryResponse<apiRoutes[T] | any>>;
   }
 
 }
