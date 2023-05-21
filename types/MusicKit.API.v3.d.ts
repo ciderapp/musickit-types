@@ -13,26 +13,29 @@ declare namespace MusicKit {
     "v1/me/library/albums": MusicKit.Albums[];
     "v1/me/library/artists": MusicKit.Artists[];
 
+    "/v1/me/recent/played": MusicKit.Songs[] | MusicKit.Albums[];
 
     "v1/me/library/playlists": MusicKit.Playlists[];
     "v1/me/library/playlists/*": MusicKit.Playlists[];
 
+    "v1/me/library/search": MusicKit.Songs[] | MusicKit.Albums[] | MusicKit.Artists[] | MusicKit.Playlists[];
+
     "v1/storefronts": MusicKit.Storefronts[];
   }
 
-  type ResourceTypes = "songs" | "albums" | "artists" | "playlists" | "storefronts";
+  type ResourceTypes = "songs" | "albums" | "artists" | "playlists" | "storefronts" | "library-playlsts" | "library-songs" | "library-albums" | "library-artists" | "library-search" | "recent-played";
 
 
   // Query Response Template
   interface QueryResponse<T = unknown> {
     data: {
-      data?: T;
-      resources?: {
-        [key in ResourceTypes]?: { [key: string]: Resource };
+      data: T;
+      resources: {
+        [key in ResourceTypes]: { [key: string]: Resource };
       };
-      next?: string;
-      meta?: {
-        total?: number;
+      next: string;
+      meta: {
+        total: number;
       }
     };
     request: unknown;
