@@ -549,6 +549,10 @@ declare namespace MusicKit {
 
   type QueryParameters = Record<string, any>;
 
+  type QueryOptions = {
+    fetchOptions?: RequestInit;
+  }
+
   /**
    * This class represents the Apple Music API.
    */
