@@ -575,9 +575,7 @@ declare namespace MusicKit {
     /**
      * Apple Music Social Profile for the currently authenticated user.
      */
-    personalSocialProfile: SocialProfile;
-
-
+    personalSocialProfile(): Promise<SocialProfile>;
 
     /**
      * Fetch one or more activities using their identifiers.
