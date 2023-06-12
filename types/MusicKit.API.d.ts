@@ -357,10 +357,12 @@ declare namespace MusicKit {
     type: 'library-playlists' | 'library-playlist-folders';
     attributes?: {
       artwork?: Artwork;
+      canDelete: boolean;
       canEdit: boolean;
       dateAdded?: string;
       description?: DescriptionAttribute;
       hasCatalog: boolean;
+      isPublic: boolean;
       name: string;
       playParams?: PlayParameters;
       trackCount?: number;
@@ -485,6 +487,8 @@ declare namespace MusicKit {
     id: string;
     kind: string;
     isLibrary?: boolean;
+    globalId?: string;
+    versionHash?: string;
   }
 
   /**
