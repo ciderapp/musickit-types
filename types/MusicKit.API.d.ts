@@ -424,13 +424,17 @@ declare namespace MusicKit {
     type: 'playlists';
     attributes?: {
       artwork?: Artwork;
+      audioTraits: [];
       curatorName: string;
+      curatorSocialHandle: string;
       description?: DescriptionAttribute;
       isChart: boolean;
       lastModifiedDate?: string;
       name: string;
+      playParams?: PlayParameters;
       playlistType: 'editorial' | 'external' | 'personal-mix' | 'replay' | 'user-shared';
       url: string;
+      versionHash?: string;
       trackTypes: Array<'music-videos' | 'songs'>;
     };
     relationships: {

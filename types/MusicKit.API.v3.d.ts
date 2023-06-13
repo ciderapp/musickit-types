@@ -31,7 +31,7 @@ declare namespace MusicKit {
     data: {
       data: T;
       resources: {
-        [key in ResourceTypes]: { [key: string]: Resource };
+        [key in ResourceTypes]: { [key: string]: MusicKit.Songs | MusicKit.Albums | MusicKit.Artists | MusicKit.Playlists | MusicKit.Storefronts | MusicKit.LibraryPlaylists | MusicKit.LibrarySongs | MusicKit.LibraryAlbums };
       };
       next: string;
       meta: {
