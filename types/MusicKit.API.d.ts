@@ -354,18 +354,19 @@ declare namespace MusicKit {
    * https://developer.apple.com/documentation/applemusicapi/libraryplaylists/
    */
   interface LibraryPlaylists extends Resource {
+    id: MusicItemID;
     type: 'library-playlists' | 'library-playlist-folders';
     attributes?: {
-      artwork?: Artwork;
+      trackCount?: number;
       canDelete: boolean;
       canEdit: boolean;
-      dateAdded?: string;
-      description?: DescriptionAttribute;
+      dateAdded: string;
+      description: DescriptionAttribute;
+      artwork?: Artwork;
       hasCatalog: boolean;
       isPublic: boolean;
       name: string;
-      playParams?: PlayParameters;
-      trackCount?: number;
+      playParams: PlayParameters;
     };
     relationships?: {
       catalog: Relationship<Playlists>;
@@ -416,25 +417,33 @@ declare namespace MusicKit {
   }
 
   /**
-   * A resource object that represents a playlist.
+   * A resource object that represents a catalog playlist.
    * https://developer.apple.com/documentation/applemusicapi/playlists-ulf
    */
   interface Playlists extends Resource {
     id: MusicItemID;
     type: 'playlists';
     attributes?: {
-      artwork?: Artwork;
-      audioTraits: [];
-      curatorName: string;
-      curatorSocialHandle: string;
-      description?: DescriptionAttribute;
-      editorialNotes?: EditorialNotes;
-      isChart: boolean;
-      lastModifiedDate?: string;
-      name: string;
-      playParams?: PlayParameters;
-      playlistType: 'editorial' | 'external' | 'personal-mix' | 'replay' | 'user-shared';
+      lastModifiedDate: string;
+      supportsSings: boolean;
+      description: DescriptionAttribute;
+      artwork: Artwork;
       url: string;
+      playParams: PlayParameters;
+      trackCount?: number;
+      curatorName: string;
+      curatorSocialHandle?: string;
+      audioTraits: string[];
+      editorialArtwork: { [key in editorialArtworkTypes]: EditorialArtwork };
+      name: string;
+      isChart: boolean;
+      playlistType: 'editorial' | 'external' | 'personal-mix' | 'replay' | 'user-shared';
+      editorialVideo:  { [key in EditorialVideoTypes]: EditorialVideo };
+      editorialNotes?: EditorialNotes;
+
+
+
+
       versionHash?: string;
       trackTypes: Array<'music-videos' | 'songs'>;
     };
@@ -501,7 +510,7 @@ declare namespace MusicKit {
    * https://developer.apple.com/documentation/musickit/editorialnotes
    */
   interface EditorialNotes {
-    hashValue: number;
+    hashValue?: number;
     name?: string;
     short?: string;
     standard?: string;
@@ -521,6 +530,33 @@ declare namespace MusicKit {
     textColor3: string;
     textColor4: string;
     url: string;
+  }
+
+  /**
+   * The type of editorial artwork for a music item.
+   */
+  type editorialArtworkTypes = 'superHeroTall' | 'storeFlowcase' | 'subscriptionHero' | "subscriptionCover" | "staticDetailSquare" | "staticDetailTall" | "brandLogo" | "superHeroWide"
+
+  /**
+   * An object that represents artwork for a music item.
+   * @Note - This is not documented in the Apple Music API docs.
+   */
+  interface EditorialArtwork extends Artwork {
+    hasP3: boolean;
+  }
+
+  /**
+   * The types of editorial videos for a music item.
+   */
+  type EditorialVideoTypes = 'motionSquareVideo1x1' | 'motionTallVideo3x4' | 'motionDetailTall' | 'motionDetailSquare'
+  
+  /**
+   * An object that represents the editorial video for a music item.
+   * @Note - This is not documented in the Apple Music API docs.
+   */
+  interface EditorialVideo {
+    previewFrame: Artwork;
+    video: string
   }
 
   /**
