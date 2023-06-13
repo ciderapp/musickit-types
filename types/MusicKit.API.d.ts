@@ -440,17 +440,13 @@ declare namespace MusicKit {
       playlistType: 'editorial' | 'external' | 'personal-mix' | 'replay' | 'user-shared';
       editorialVideo:  { [key in EditorialVideoTypes]: EditorialVideo };
       editorialNotes?: EditorialNotes;
-
-
-
-
       versionHash?: string;
       trackTypes: Array<'music-videos' | 'songs'>;
     };
-    relationships: {
-      curator: Relationship<Activities | AppleCurators | Curators>;
-      library: Relationship<LibraryPlaylists>;
-      tracks: Relationship<MusicVideos | Songs>;
+    relationships?: {
+      curator?: Relationship<Activities | AppleCurators | Curators>;
+      library?: Relationship<LibraryPlaylists>;
+      tracks?: Relationship<MusicVideos | Songs>;
     };
     views: {
       'featured-artists': View<Artists>;
@@ -595,6 +591,7 @@ declare namespace MusicKit {
   type QueryParameters = Record<string, any>;
 
   type QueryOptions = {
+    includeResponseMeta?: boolean;
     fetchOptions?: RequestInit;
   }
 
