@@ -428,6 +428,7 @@ declare namespace MusicKit {
       curatorName: string;
       curatorSocialHandle: string;
       description?: DescriptionAttribute;
+      editorialNotes?: EditorialNotes;
       isChart: boolean;
       lastModifiedDate?: string;
       name: string;
