@@ -644,6 +644,8 @@ declare namespace MusicKit {
     "library-artists": { [key: string]: MusicKit.Artists };
     "curator": { [key: string]: MusicKit.Curators };
     "social-profiles": { [key: string]: MusicKit.SocialProfile };
+    "apple-curators": { [key: string]: MusicKit.AppleCurators };
+
   }
 
   // Query Response Template
