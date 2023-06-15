@@ -572,6 +572,7 @@ declare namespace MusicKit {
   interface DescriptionAttribute {
     short: string;
     standard: string;
+    long?: string;
   }
 
   interface SearchResult<T> {
