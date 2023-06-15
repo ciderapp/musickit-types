@@ -85,13 +85,6 @@ declare namespace MusicKit {
     suppressErrorDialog?: boolean | undefined;
   }
 
-  interface SocialProfile {
-    attributes: {
-      artwork: MusicKit.Artwork;
-    };
-    id: string;
-  }
-
   /**
    * Configure a MusicKit instance.
    */
