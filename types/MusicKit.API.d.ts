@@ -188,7 +188,7 @@ declare namespace MusicKit {
    * https://developer.apple.com/documentation/applemusicapi/curators-uja
    */
   interface Curators extends Resource {
-    type: 'curators';
+    type: 'curator';
     attributes?: {
       artwork: Artwork;
       editorialNotes?: EditorialNotes;
