@@ -385,6 +385,7 @@ declare namespace MusicKit {
       genreNames: string[];
       name: string;
       url: string;
+      inFavorites?: boolean;
     };
     relationships: {
       albums: Relationship<Albums>;
