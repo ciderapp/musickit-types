@@ -642,7 +642,7 @@ declare namespace MusicKit {
     "library-songs": { [key: string]: MusicKit.LibrarySongs };
     "library-albums": { [key: string]: MusicKit.LibraryAlbums };
     "library-artists": { [key: string]: MusicKit.Artists };
-    "curator": { [key: string]: MusicKit.Curators | MusicKit.SocialProfile };
+    "curator": { [key: string]: MusicKit.SocialProfile };
   }
 
   // Query Response Template
