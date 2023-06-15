@@ -25,23 +25,23 @@ declare namespace MusicKit {
 
   type ResourceTypes = "songs" | "albums" | "artists" | "playlists" | "storefronts" | "library-playlists" | "library-songs" | "library-albums" | "library-artists" | "library-search" | "recent-played";
 
+  type ResourceMap = {
+    "songs": { [key: string]: MusicKit.Songs };
+    "albums": { [key: string]: MusicKit.Albums };
+    "artists": { [key: string]: MusicKit.Artists };
+    "playlists": { [key: string]: MusicKit.Playlists };
+    "storefronts": { [key: string]: MusicKit.Storefronts };
+    "library-playlists": { [key: string]: MusicKit.LibraryPlaylists };
+    "library-songs": { [key: string]: MusicKit.LibrarySongs };
+    "library-albums": { [key: string]: MusicKit.LibraryAlbums };
+    "library-artists": { [key: string]: MusicKit.Artists };
+  }
 
   // Query Response Template
   interface QueryResponse<T = unknown> {
     data: {
       data: T;
-      resources: {
-        "songs": { [key: string]: MusicKit.Songs };
-        "albums": { [key: string]: MusicKit.Albums };
-        "artists": { [key: string]: MusicKit.Artists };
-        "playlists": { [key: string]: MusicKit.Playlists };
-        "storefronts": { [key: string]: MusicKit.Storefronts };
-        "library-playlists": { [key: string]: MusicKit.LibraryPlaylists };
-        "library-songs": { [key: string]: MusicKit.LibrarySongs };
-        "library-albums": { [key: string]: MusicKit.LibraryAlbums };
-        "library-artists": { [key: string]: MusicKit.Artists };
-        // [key in ResourceTypes]: { [key: string]: Resource };
-      };
+      resources: ResourceMap;
       next: string;
       meta: {
         total: number;
