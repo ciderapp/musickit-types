@@ -23,7 +23,7 @@ declare namespace MusicKit {
     "v1/storefronts": MusicKit.Storefronts[];
   }
 
-  type ResourceTypes = "songs" | "albums" | "artists" | "playlists" | "storefronts" | "library-playlists" | "library-songs" | "library-albums" | "library-artists" | "library-search" | "recent-played";
+  type ResourceTypes = "songs" | "albums" | "artists" | "playlists" | "storefronts" | "library-playlists" | "library-songs" | "library-albums" | "library-artists";
 
   type ResourceMap = {
     "songs": { [key: string]: MusicKit.Songs };
