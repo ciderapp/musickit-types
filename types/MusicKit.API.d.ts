@@ -494,7 +494,7 @@ declare namespace MusicKit {
     };
   }
 
-  
+
   interface SocialProfile extends Resource {
     type: 'social-profiles';
     attributes: {
@@ -559,7 +559,7 @@ declare namespace MusicKit {
    * The types of editorial videos for a music item.
    */
   type EditorialVideoTypes = 'motionSquareVideo1x1' | 'motionTallVideo3x4' | 'motionDetailTall' | 'motionDetailSquare'
-  
+
   /**
    * An object that represents the editorial video for a music item.
    * @Note - This is not documented in the Apple Music API docs.
@@ -631,7 +631,7 @@ declare namespace MusicKit {
     "v1/storefronts": MusicKit.Storefronts[];
   }
 
-  type ResourceTypes = "songs" | "albums" | "artists" | "playlists" | "storefronts" | "library-playlists" | "library-songs" | "library-albums" | "library-artists" | "curator";
+  type ResourceTypes = "songs" | "albums" | "artists" | "playlists" | "storefronts" | "library-playlists" | "library-songs" | "library-albums" | "library-artists" | "curator" | "social-profiles" | "apple-curators";
 
   type ResourceMap = {
     "songs": { [key: string]: MusicKit.Songs };
