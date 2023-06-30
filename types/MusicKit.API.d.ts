@@ -439,7 +439,7 @@ declare namespace MusicKit {
       name: string;
       isChart: boolean;
       playlistType: 'editorial' | 'external' | 'personal-mix' | 'replay' | 'user-shared';
-      editorialVideo:  { [key in EditorialVideoTypes]: EditorialVideo };
+      editorialVideo: { [key in EditorialVideoTypes]: EditorialVideo };
       editorialNotes?: EditorialNotes;
       versionHash?: string;
       trackTypes: Array<'music-videos' | 'songs'>;
@@ -654,6 +654,7 @@ declare namespace MusicKit {
     data: {
       data: T;
       resources: ResourceMap;
+      results: QueryResult;
       next: string;
       meta: {
         total: number;
@@ -661,6 +662,33 @@ declare namespace MusicKit {
     };
     request: unknown;
     response: unknown;
+  }
+
+  interface QueryResult {
+    activities?: SearchResult<Activities>;
+    albums?: SearchResult<Albums>;
+    'apple-curators'?: SearchResult<AppleCurators>;
+    artists?: SearchResult<Artists>;
+    curators?: SearchResult<Curators>;
+    'music-videos'?: SearchResult<MusicVideos>;
+    playlists?: SearchResult<Playlists>;
+    'record-labels'?: SearchResult<RecordLabels>;
+    stations?: SearchResult<Stations>;
+    songs?: SearchResult<Songs>;
+    top?: {
+      data: Array<
+        | Activities
+        | Albums
+        | AppleCurators
+        | Artists
+        | Curators
+        | MusicVideos
+        | Playlists
+        | RecordLabels
+        | Songs
+        | Stations
+      >;
+    };
   }
 
   // Start of the v3 interface
