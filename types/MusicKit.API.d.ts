@@ -72,23 +72,35 @@ declare namespace MusicKit {
     readonly movementNumber?: number;
     readonly name: string;
     readonly playParams?: PlayParameters;
-    readonly previews: Preview[];
+    readonly previews?: Preview[];
     readonly releaseDate?: string;
     readonly trackNumber?: number;
-    readonly url: string;
+    readonly url?: string;
     readonly workName?: string;
     readonly artistUrl?: string;
-    readonly currentPlaybackProgress: number;
-    readonly currentPlaybackTime: number;
-    readonly endTime: number;
-    readonly kind: string;
-    readonly remainingTime: number;
-    readonly songId: string;
-    readonly startTime: number;
-    readonly isPlaying: boolean;
+    readonly currentPlaybackProgress?: number;
+    readonly currentPlaybackTime?: number;
+    readonly endTime?: number;
+    readonly kind?: string;
+    readonly remainingTime?: number;
+    readonly songId?: string;
+    readonly startTime?: number;
+    readonly isPlaying?: boolean;
     readonly editorialElementKind?: string
     readonly displayStyle?: string
-    readonly editorialArtwork: { [key in editorialArtworkTypes]: EditorialArtwork };
+    readonly editorialArtwork?: { [key in editorialArtworkTypes]: EditorialArtwork };
+    readonly lastModifiedDate?: string;
+    readonly supportsSings?: boolean;
+    readonly description?: DescriptionAttribute;
+    readonly trackCount?: number;
+    readonly curatorName?: string;
+    readonly curatorSocialHandle?: string;
+    readonly audioTraits?: string[];
+    readonly isChart?: boolean;
+    readonly playlistType?: 'editorial' | 'external' | 'personal-mix' | 'replay' | 'user-shared';
+    readonly editorialVideo?: { [key in EditorialVideoTypes]: EditorialVideo };
+    readonly versionHash?: string;
+    readonly trackTypes?: Array<'music-videos' | 'songs'>;
   }
 
   /**
