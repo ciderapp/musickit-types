@@ -593,6 +593,7 @@ declare namespace MusicKit {
     textColor3: string;
     textColor4: string;
     url: string;
+    hasP3?: boolean;
   }
 
   /**
@@ -604,11 +605,7 @@ declare namespace MusicKit {
    * An object that represents artwork for a music item.
    * @Note - This is not documented in the Apple Music API docs.
    */
-  interface EditorialArtwork extends Artwork {
-    [key in editorialArtworkTypes]: EditorialArtwork;
-    hasP3: boolean;
-  }
-
+  type EditorialArtwork = { [key in editorialArtworkTypes]: EditorialArtwork }
 
   /**
    * The types of editorial videos for a music item.
