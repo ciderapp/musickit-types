@@ -170,6 +170,7 @@ declare namespace MusicKit {
       composers?: Relationship<Artists>;
       library?: Relationship<LibraryAlbums>;
       'music-videos'?: Relationship<MusicVideos>;
+      'audio-analysis'?: Relationship<AudioAnalysis>;
     };
   }
 
@@ -547,7 +548,10 @@ declare namespace MusicKit {
     };
   }
 
-
+  /**
+   * A resource object that represents a users Apple Music social profile.
+   * @undocumented
+   */
   interface SocialProfile extends Resource {
     type: 'social-profiles';
     attributes: {
@@ -558,6 +562,47 @@ declare namespace MusicKit {
       name: string;
       url: string;
     };
+  }
+
+
+  /**
+   * A resource object that represents the audio analysis of a song.
+   * @undocumented
+   */
+  interface AudioAnalysis extends Resource {
+    type: 'audio-analysis';
+    attributes: {
+      acousticness: GenericAudioProperty;
+      beats: {
+        barsInMilliseconds: number[];
+        beatsInMilliseconds: number[];
+      };
+      bpm: GenericAudioProperty & {
+        percentDeviation: number;
+      };
+      danceability: GenericAudioProperty
+      energy: GenericAudioProperty;
+      key: {
+        beginning: { tonic: string, mode: string };
+        ending: { tonic: string, mode: string };
+        main: { tonic: string, mode: string };
+      };
+      loudness: DetailedAudioProperty;
+      melodicness: GenericAudioProperty;
+      valence: GenericAudioProperty;
+    }
+  }
+  
+  type GenericAudioProperty = {
+    beginning: number;
+    ending: number;
+    main: number;
+  }
+
+  type DetailedAudioProperty = {
+    beginning: { peak: number, range: number, value: number };
+    ending: { peak: number, range: number, value: number };
+    main: { peak: number, range: number, value: number };
   }
 
   interface PlayParameters {
