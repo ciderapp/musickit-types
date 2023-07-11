@@ -605,8 +605,10 @@ declare namespace MusicKit {
    * @Note - This is not documented in the Apple Music API docs.
    */
   interface EditorialArtwork extends Artwork {
+    [key in editorialArtworkTypes]: EditorialArtwork;
     hasP3: boolean;
   }
+
 
   /**
    * The types of editorial videos for a music item.
