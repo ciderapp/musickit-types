@@ -88,7 +88,7 @@ declare namespace MusicKit {
     readonly isPlaying?: boolean;
     readonly editorialElementKind?: string
     readonly displayStyle?: string
-    readonly editorialArtwork?: { [key in editorialArtworkTypes]: EditorialArtwork };
+    readonly editorialArtwork?: EditorialArtwork;
     readonly lastModifiedDate?: string;
     readonly supportsSings?: boolean;
     readonly description?: DescriptionAttribute;
@@ -488,7 +488,7 @@ declare namespace MusicKit {
       curatorName: string;
       curatorSocialHandle?: string;
       audioTraits: string[];
-      editorialArtwork: { [key in editorialArtworkTypes]: EditorialArtwork };
+      editorialArtwork: EditorialArtwork;
       name: string;
       isChart: boolean;
       playlistType: 'editorial' | 'external' | 'personal-mix' | 'replay' | 'user-shared';
@@ -605,7 +605,7 @@ declare namespace MusicKit {
    * An object that represents artwork for a music item.
    * @Note - This is not documented in the Apple Music API docs.
    */
-  type EditorialArtwork = { [key in editorialArtworkTypes]: EditorialArtwork }
+  type EditorialArtwork = { [key in editorialArtworkTypes]: Artwork }
 
   /**
    * The types of editorial videos for a music item.
