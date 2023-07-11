@@ -52,6 +52,46 @@ declare namespace MusicKit {
   }
 
   /**
+   * Interface representing the potential attributes for a resource object.
+   */
+  interface ResourceAttributes {
+    readonly albumName: string;
+    readonly artistName: string;
+    readonly artwork: Artwork;
+    readonly attribution?: string;
+    readonly composerName?: string;
+    readonly contentRating?: ContentRating;
+    readonly discNumber?: number;
+    readonly durationInMillis: number;
+    readonly editorialNotes?: EditorialNotes;
+    readonly genreNames: string[];
+    readonly hasLyrics: boolean;
+    readonly isrc?: string;
+    readonly movementCount?: number;
+    readonly movementName?: string;
+    readonly movementNumber?: number;
+    readonly name: string;
+    readonly playParams?: PlayParameters;
+    readonly previews: Preview[];
+    readonly releaseDate?: string;
+    readonly trackNumber?: number;
+    readonly url: string;
+    readonly workName?: string;
+    readonly artistUrl?: string;
+    readonly currentPlaybackProgress: number;
+    readonly currentPlaybackTime: number;
+    readonly endTime: number;
+    readonly kind: string;
+    readonly remainingTime: number;
+    readonly songId: string;
+    readonly startTime: number;
+    readonly isPlaying: boolean;
+    readonly editorialElementKind?: string
+    readonly displayStyle?: string
+    readonly editorialArtwork: { [key in editorialArtworkTypes]: EditorialArtwork };
+  }
+
+  /**
    * A resource object that represents a storefront, an Apple Music and iTunes Store territory that the content is available in.
    * https://developer.apple.com/documentation/applemusicapi/storefronts
    */

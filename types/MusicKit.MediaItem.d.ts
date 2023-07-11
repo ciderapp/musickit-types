@@ -256,10 +256,6 @@ declare namespace MusicKit {
      */
     readonly editorialElementKind?: string
     /**
-     * Editorial artwork for the media item.
-     */
-    readonly editorialArtwork?: { [key in editorialArtworkTypes]: EditorialArtwork };
-    /**
      * The editorial elements display style.
      */
     readonly displayStyle?: string
