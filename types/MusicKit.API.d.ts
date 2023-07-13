@@ -564,6 +564,16 @@ declare namespace MusicKit {
     };
   }
 
+  /**
+   * A resource object that represents a rating for a resource.
+   * @undocumented 
+   */
+  interface Rating extends Resource {
+    type: 'ratings';
+    attributes: {
+      value: number;
+    };
+  }
 
   /**
    * A resource object that represents the audio analysis of a song.
@@ -592,7 +602,7 @@ declare namespace MusicKit {
       valence: GenericAudioProperty;
     }
   }
-  
+
   type GenericAudioProperty = {
     beginning: number;
     ending: number;
@@ -726,6 +736,11 @@ declare namespace MusicKit {
     "v1/me/library/search": MusicKit.Songs[] | MusicKit.Albums[] | MusicKit.Artists[] | MusicKit.Playlists[];
 
     "v1/storefronts": MusicKit.Storefronts[];
+
+    "v1/me/rating/songs": MusicKit.Rating;
+    "v1/me/rating/albums": MusicKit.Rating;
+    "v1/me/rating/playlists": MusicKit.Rating;
+    // Any type
   }
 
   type ResourceTypes = "songs" | "albums" | "artists" | "playlists" | "storefronts" | "library-playlists" | "library-songs" | "library-albums" | "library-artists" | "curator" | "social-profiles" | "apple-curators";
@@ -743,7 +758,6 @@ declare namespace MusicKit {
     "curator": { [key: string]: MusicKit.Curators };
     "social-profiles": { [key: string]: MusicKit.SocialProfile };
     "apple-curators": { [key: string]: MusicKit.AppleCurators };
-
   }
 
   // Query Response Template
