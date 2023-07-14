@@ -737,9 +737,9 @@ declare namespace MusicKit {
 
     "v1/storefronts": MusicKit.Storefronts[];
 
-    "v1/me/rating/songs": MusicKit.Rating;
-    "v1/me/rating/albums": MusicKit.Rating;
-    "v1/me/rating/playlists": MusicKit.Rating;
+    "v1/me/rating/songs": MusicKit.Rating[];
+    "v1/me/rating/albums": MusicKit.Rating[];
+    "v1/me/rating/playlists": MusicKit.Rating[];
     // Any type
   }
 
