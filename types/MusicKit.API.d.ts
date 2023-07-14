@@ -776,6 +776,7 @@ declare namespace MusicKit {
   }
 
   interface QueryResult {
+    target?: string;
     activities?: SearchResult<Activities>;
     albums?: SearchResult<Albums>;
     'apple-curators'?: SearchResult<AppleCurators>;

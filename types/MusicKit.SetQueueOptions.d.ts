@@ -28,6 +28,14 @@ declare namespace MusicKit {
          */
         songs?: string[] | undefined;
         /**
+         * The music videos used to set a music player's playback queue.
+         */
+        musicVideos?: string[] | undefined;
+        /**
+         * The station used to set a music player's playback queue.
+         */
+        station?: string | undefined;
+        /**
          * The start position for a set playback queue.
          */
         startPosition?: number | undefined;

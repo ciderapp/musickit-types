@@ -65,9 +65,15 @@ declare namespace MusicKit {
     addEventListener(name: string, callback: Function): void;
 
     /**
-     * No description available.
+     * Add a media item to the users library.
+     * @param id The id of the media item to add to the library.
+     * @param type The type of the media item to add to the library.
+     * 
+     * @returns A promise containing a dictionary of the media item ids that were added to the library.
      */
-    addToLibrary(id: any, type: any): Promise<any>;
+    addToLibrary(id: string, type?: string): Promise<{
+      [type: string]: string[];
+    }>;
 
     /**
      * Returns a promise containing a music user token when a user has

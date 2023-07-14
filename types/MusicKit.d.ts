@@ -122,5 +122,11 @@ declare namespace MusicKit {
    */
   function generateEmbedCode(url: string, options: EmbedOptions): string;
 
-  function formatMediaTime(seconds: number, separator: string): string;
+  /**
+   * Returns a formatted media time string.
+   * 
+   * @param seconds The time in seconds.
+   * @param separator The separator to use between minutes and seconds.
+   */
+  function formatMediaTime(seconds: number, separator?: string): string;
 }
