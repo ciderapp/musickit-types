@@ -563,6 +563,40 @@ declare namespace MusicKit {
       url: string;
     };
   }
+  
+  /**
+   * A resource object that represents a grouping view
+   * @undocumented 
+   */
+  interface Groupings extends Resource {
+    type: 'groupings';
+    attributes: {
+      genreNames: string[];
+      name: string;
+    },
+    relationships: {
+      curator: Relationship<Curators>;
+      tabs: Relationship<EditorialElements>;
+    }
+  }
+
+  /**
+   * A resource object that represents a editorial element
+   * @undocumented
+   */
+  interface EditorialElements extends Resource {
+    type: 'editorial-elements';
+    attributes: {
+      editorialElementKind: number
+      doNotFilter?: boolean;
+      lastModifiedDate?: string;
+      links?: {label: string; url: string}[];
+    },
+    id: 'default' | string;
+    relationships: {
+      children: Relationship<EditorialElements>;
+    }
+  }
 
   /**
    * A resource object that represents a rating for a resource.
@@ -737,10 +771,13 @@ declare namespace MusicKit {
 
     "v1/storefronts": MusicKit.Storefronts[];
 
+    // Ratings can be retrieved for any resource type.
     "v1/me/rating/songs": MusicKit.Rating[];
     "v1/me/rating/albums": MusicKit.Rating[];
     "v1/me/rating/playlists": MusicKit.Rating[];
-    // Any type
+    
+
+    "am/groupings": MusicKit.Groupings[];
   }
 
   type ResourceTypes = "songs" | "albums" | "artists" | "playlists" | "storefronts" | "library-playlists" | "library-songs" | "library-albums" | "library-artists" | "curator" | "social-profiles" | "apple-curators";
