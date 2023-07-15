@@ -563,7 +563,7 @@ declare namespace MusicKit {
       url: string;
     };
   }
-  
+
   /**
    * A resource object that represents a grouping view
    * @undocumented 
@@ -581,20 +581,40 @@ declare namespace MusicKit {
   }
 
   /**
+   * A resource object that represents a room
+   * @undocumented
+   */
+  interface Rooms {
+    type: 'rooms';
+    href: string;
+    id: string
+  }
+
+  /**
    * A resource object that represents a editorial element
    * @undocumented
    */
   interface EditorialElements extends Resource {
     type: 'editorial-elements';
     attributes: {
-      editorialElementKind: number
+      editorialElementKind: string  | number
+      collectionId?: string;
+      emphasize?: boolean;
+      featureFirstElement?: boolean;
+      designBadge?: 'NEW ALBUM' | 'UPDATED PLAYLIST' | 'LISTEN NOW' | 'NEW PLAYLIST' | 'NEW RELEASE' | string;
+      displayStyle?: 'compact' | 'expanded'
+      keySwoosh?: 'FeaturedPlaylists' | 'ArtistsPlaylists' | string;
       doNotFilter?: boolean;
       lastModifiedDate?: string;
-      links?: {label: string; url: string}[];
+      links?: { label: string; url: string }[];
+      type?: 'normal'
+      supportedSorts?: string[];
     },
     id: 'default' | string;
     relationships: {
       children: Relationship<EditorialElements>;
+      contents?: Relationship<Albums | Playlists>;
+      room?: Relationship<Rooms>;
     }
   }
 
@@ -775,7 +795,7 @@ declare namespace MusicKit {
     "v1/me/rating/songs": MusicKit.Rating[];
     "v1/me/rating/albums": MusicKit.Rating[];
     "v1/me/rating/playlists": MusicKit.Rating[];
-    
+
 
     "am/groupings": MusicKit.Groupings[];
   }
