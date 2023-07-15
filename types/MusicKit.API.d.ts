@@ -597,6 +597,7 @@ declare namespace MusicKit {
   interface EditorialElements extends Resource {
     type: 'editorial-elements';
     attributes: {
+      name: string;
       editorialElementKind: string  | number
       collectionId?: string;
       emphasize?: boolean;
