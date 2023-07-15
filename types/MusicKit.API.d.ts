@@ -611,6 +611,7 @@ declare namespace MusicKit {
       links?: { label: string; url: string; target?: 'external' | 'internal'; }[];
       type?: 'normal'
       supportedSorts?: string[];
+      description?: string;
     },
     id: 'default' | string;
     relationships: {
