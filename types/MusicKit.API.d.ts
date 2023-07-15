@@ -608,7 +608,7 @@ declare namespace MusicKit {
       keySwoosh?: 'FeaturedPlaylists' | 'ArtistsPlaylists' | string;
       doNotFilter?: boolean;
       lastModifiedDate?: string;
-      links?: { label: string; url: string }[];
+      links?: { label: string; url: string; target?: 'external' | 'internal'; }[];
       type?: 'normal'
       supportedSorts?: string[];
     },
