@@ -615,7 +615,7 @@ declare namespace MusicKit {
     id: 'default' | string;
     relationships: {
       children: Relationship<EditorialElements>;
-      contents?: Relationship<Albums | Playlists>;
+      contents?: Relationship<Resource | MediaItem>;
       room?: Relationship<Rooms>;
     }
   }
