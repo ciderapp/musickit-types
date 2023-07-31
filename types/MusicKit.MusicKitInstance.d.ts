@@ -55,6 +55,10 @@ declare namespace MusicKit {
      * The state of autoplay.
      */
     autoplayEnabled: boolean;
+    /**
+     * The playback speed.
+     */
+    playbackRate: number
 
     /**
      * Add an event listener for a MusicKit instance by name.
