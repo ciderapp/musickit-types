@@ -847,6 +847,7 @@ declare namespace MusicKit {
     'record-labels'?: SearchResult<RecordLabels>;
     stations?: SearchResult<Stations>;
     songs?: SearchResult<Songs>;
+    badgingMap?: SearchResult<unknown>;
     top?: {
       data: Array<
         | Activities
