@@ -65,7 +65,7 @@ declare namespace MusicKit {
     /**
      * The attributes object for the media item.
      */
-    readonly attributes: any;
+    readonly attributes: MediaItemAttributes;
     /**
      * A string containing the content rating for the media item.
      */
@@ -123,11 +123,11 @@ declare namespace MusicKit {
     /**
      * The type of the media item.
      */
-    readonly type: any;
+    readonly type: string;
     /**
      * Relationships of the media item
      */
-    readonly relationships: any;
+    readonly relationships: unknown;
     /**
      * A Boolean value that indicates whether the item is a cloud upload.
      */
