@@ -863,18 +863,18 @@ declare namespace MusicKit {
   type ResourceTypes = "songs" | "albums" | "artists" | "playlists" | "storefronts" | "library-playlists" | "library-songs" | "library-albums" | "library-artists" | "curator" | "social-profiles" | "apple-curators";
 
   type ResourceMap = {
-    "songs": { [key: string]: MusicKit.Songs };
-    "albums": { [key: string]: MusicKit.Albums };
-    "artists": { [key: string]: MusicKit.Artists };
-    "playlists": { [key: string]: MusicKit.Playlists };
-    "storefronts": { [key: string]: MusicKit.Storefronts };
-    "library-playlists": { [key: string]: MusicKit.LibraryPlaylists };
-    "library-songs": { [key: string]: MusicKit.LibrarySongs };
-    "library-albums": { [key: string]: MusicKit.LibraryAlbums };
-    "library-artists": { [key: string]: MusicKit.Artists };
-    "curator": { [key: string]: MusicKit.Curators };
-    "social-profiles": { [key: string]: MusicKit.SocialProfile };
-    "apple-curators": { [key: string]: MusicKit.AppleCurators };
+    "songs"?: { [key: string]: MusicKit.Songs };
+    "albums"?: { [key: string]: MusicKit.Albums };
+    "artists"?: { [key: string]: MusicKit.Artists };
+    "playlists"?: { [key: string]: MusicKit.Playlists };
+    "storefronts"?: { [key: string]: MusicKit.Storefronts };
+    "library-playlists"?: { [key: string]: MusicKit.LibraryPlaylists };
+    "library-songs"?: { [key: string]: MusicKit.LibrarySongs };
+    "library-albums"?: { [key: string]: MusicKit.LibraryAlbums };
+    "library-artists"?: { [key: string]: MusicKit.Artists };
+    "curator"?: { [key: string]: MusicKit.Curators };
+    "social-profiles"?: { [key: string]: MusicKit.SocialProfile };
+    "apple-curators"?: { [key: string]: MusicKit.AppleCurators };
   }
 
   // Query Response Template
