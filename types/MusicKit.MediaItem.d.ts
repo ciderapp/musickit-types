@@ -232,6 +232,10 @@ declare namespace MusicKit {
      */
     readonly songId: string;
     /**
+     * The cloud Id for the uploaded media item.
+     */
+    readonly cloudId?: string;
+    /**
      * The start time of the media item.
      */
     readonly startTime: number;
