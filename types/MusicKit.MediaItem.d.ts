@@ -26,8 +26,6 @@ declare namespace MusicKit {
    * This class represents a single media item.
    */
   class MediaItem {
-    href: any;
-
     /**
      * A constructor that creates a new media item from specified options.
      */
@@ -38,6 +36,27 @@ declare namespace MusicKit {
      */
     prepareToPlay(): Promise<void>;
 
+    /**
+     * Asset Url for the MediaItem
+     */
+    readonly assetURL: string;
+    /**
+     * The attributes object for the media item.
+     */
+    readonly attributes: MediaItemAttributes;
+    readonly channels: number;
+    readonly cloudId: string;
+    readonly contentType: string;
+    readonly dispatchNamespace: string;
+    /**
+     * The flavor of the media item. Can be used to determine the bitrate of the media item.
+     */
+    readonly flavor: string;
+    readonly hlsMetadata: unknown;
+    /**
+     * The identifier for the media item.
+     */
+    readonly id: string;
     /**
      * A string of information about the album.
      */
@@ -63,10 +82,6 @@ declare namespace MusicKit {
      */
     readonly artworkURL: string;
     /**
-     * The attributes object for the media item.
-     */
-    readonly attributes: MediaItemAttributes;
-    /**
      * A string containing the content rating for the media item.
      */
     readonly contentRating: string;
@@ -74,10 +89,6 @@ declare namespace MusicKit {
      * The disc number where the media item appears.
      */
     readonly discNumber: number;
-    /**
-     * The identifier for the media item.
-     */
-    readonly id: string;
     /**
      * A string of common information about the media item.
      */
@@ -143,11 +154,6 @@ declare namespace MusicKit {
      * @deprecated
      */
     readonly songId: string;
-
-    /**
-     * he flavor of the media item. Can be used to determine the bitrate of the media item.
-     */
-    readonly flavor: string;
   }
 
   /**
