@@ -67,7 +67,9 @@ declare namespace MusicKit {
          * The currently-playing media item, or the media item, within an queue,
          * that you have designated to begin playback.
          */
-        readonly nowPlayingItem: MediaItem;
+        readonly nowPlayingItem: MediaItem & {
+            _container: Resource;
+        };
         /**
          * The index of the now playing item in the current playback queue.
          */
