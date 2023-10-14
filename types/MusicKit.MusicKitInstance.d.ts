@@ -135,9 +135,9 @@ declare namespace MusicKit {
     setQueue(options: SetQueueOptions): Promise<Queue>;
 
     /**
-     *
+     * The musickit queue
      **/
-    queue: any;
+    queue: Queue;
 
     /**
      * Starts playback of the next media item in the playback queue.

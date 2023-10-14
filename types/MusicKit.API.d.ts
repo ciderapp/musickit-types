@@ -509,6 +509,58 @@ declare namespace MusicKit {
     };
   }
 
+  // Represents attributes for a podcast episode
+  interface PodcastAttributes {
+    offers: {
+      kind: string;
+      type: string;
+    }[];
+    contentAdvisory: string;
+    copyright: string;
+    artworkOrigin: 'podcast';
+    genreNames: string[];
+    kind: string;
+    mediaKind: string;
+    description: DescriptionAttribute;
+    artwork: Artwork;
+    url: string;
+    releaseDateTime: string;
+    websiteUrl: string;
+    durationInMilliseconds: number;
+    name: string;
+    guid: string;
+    contentRating: ContentRating;
+    artistName: string;
+    subscribable: boolean;
+    assetUrl: string;
+  }
+
+  /**
+   * A resource object that represents a podcast episode.
+   * @undocumented
+   */
+  interface PodcastEpisode extends Resource {
+    type: 'podcast-episodes';
+    attributes: PodcastAttributes
+  }
+
+  /**
+   * A resource object that represents a podcast.
+   * @undocumented
+   */
+  interface Podcasts extends Resource {
+    type: 'podcasts'
+    attributes: PodcastAttributes & {
+      seasonNumbers: number[];
+      languageTag: string;
+      completed: boolean;
+      trackCount: number;
+      displayType: string;
+      createdDate: string;
+      subscriptionUrl: string;
+    }
+  }
+
   /**
    * A resource object that represents an activity curator.
    * https://developer.apple.com/documentation/applemusicapi/activities-ui5
@@ -566,7 +618,7 @@ declare namespace MusicKit {
 
   /**
    * A resource object that represents a grouping view
-   * @undocumented 
+   * @undocumented
    */
   interface Groupings extends Resource {
     type: 'groupings';
@@ -623,7 +675,7 @@ declare namespace MusicKit {
 
   /**
    * A resource object that represents a rating for a resource.
-   * @undocumented 
+   * @undocumented
    */
   interface Rating extends Resource {
     type: 'ratings';
@@ -778,7 +830,7 @@ declare namespace MusicKit {
    * The parameters that can be passed to an API call
    * @note This contains wildcard types for whenever https://github.com/microsoft/TypeScript/issues/41160 is resolved.
    */
-  interface v3Routes {
+  interface v3MusicRoutes {
     "v1/me/library/songs": MusicKit.Songs[];
     "v1/me/library/songs/*": MusicKit.Songs[];
 
@@ -803,21 +855,26 @@ declare namespace MusicKit {
     "am/groupings": MusicKit.Groupings[];
   }
 
+  interface v3PodcastRoutes {
+    "/v1/catalog/${storefront}/podcasts/${id}": MusicKit.Podcasts[]
+    "/v1/catalog/${storefront}/podcasts/${id}/episodes": MusicKit.PodcastEpisode[]
+  }
+
   type ResourceTypes = "songs" | "albums" | "artists" | "playlists" | "storefronts" | "library-playlists" | "library-songs" | "library-albums" | "library-artists" | "curator" | "social-profiles" | "apple-curators";
 
   type ResourceMap = {
-    "songs": { [key: string]: MusicKit.Songs };
-    "albums": { [key: string]: MusicKit.Albums };
-    "artists": { [key: string]: MusicKit.Artists };
-    "playlists": { [key: string]: MusicKit.Playlists };
-    "storefronts": { [key: string]: MusicKit.Storefronts };
-    "library-playlists": { [key: string]: MusicKit.LibraryPlaylists };
-    "library-songs": { [key: string]: MusicKit.LibrarySongs };
-    "library-albums": { [key: string]: MusicKit.LibraryAlbums };
-    "library-artists": { [key: string]: MusicKit.Artists };
-    "curator": { [key: string]: MusicKit.Curators };
-    "social-profiles": { [key: string]: MusicKit.SocialProfile };
-    "apple-curators": { [key: string]: MusicKit.AppleCurators };
+    "songs"?: { [key: string]: MusicKit.Songs };
+    "albums"?: { [key: string]: MusicKit.Albums };
+    "artists"?: { [key: string]: MusicKit.Artists };
+    "playlists"?: { [key: string]: MusicKit.Playlists };
+    "storefronts"?: { [key: string]: MusicKit.Storefronts };
+    "library-playlists"?: { [key: string]: MusicKit.LibraryPlaylists };
+    "library-songs"?: { [key: string]: MusicKit.LibrarySongs };
+    "library-albums"?: { [key: string]: MusicKit.LibraryAlbums };
+    "library-artists"?: { [key: string]: MusicKit.Artists };
+    "curator"?: { [key: string]: MusicKit.Curators };
+    "social-profiles"?: { [key: string]: MusicKit.SocialProfile };
+    "apple-curators"?: { [key: string]: MusicKit.AppleCurators };
   }
 
   // Query Response Template
@@ -866,9 +923,11 @@ declare namespace MusicKit {
 
   // Start of the v3 interface
   interface v3 {
-    // music<T extends keyof v3Routes>(route: T, parameters?: QueryParameters, options?: QueryOptions): Promise<QueryResponse<v3Routes[T]>>;
+    // music<T extends keyof v3MusicRoutes>(route: T, parameters?: QueryParameters, options?: QueryOptions): Promise<QueryResponse<v3MusicRoutes[T]>>;
 
-    music<T extends keyof v3Routes>(route: T | string, parameters?: QueryParameters, options?: QueryOptions): Promise<QueryResponse<v3Routes[T] | any>>;
+    music<T extends keyof v3MusicRoutes>(route: T | string, parameters?: QueryParameters, options?: QueryOptions): Promise<QueryResponse<v3MusicRoutes[T] | any>>;
+
+    podcasts<T extends keyof v3PodcastRoutes>(route: T | string, parameters?: QueryParameters, options?: QueryOptions): Promise<QueryResponse<v3PodcastRoutes[T] | any>>;
   }
 
   /**
