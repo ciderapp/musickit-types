@@ -509,21 +509,6 @@ declare namespace MusicKit {
       'more-by-curator': View<Playlists>;
     };
   }
-  
-  /**
-   * A resource object that represents a playlist folder.
-   * @undocumented
-   */
-  interface PlaylistFolder extends Resource {
-    id: MusicItemID;
-    type: 'library-playlist-folders';
-    attributes: {
-        canEdit: boolean;
-        canDelete: boolean;
-        dateAdded: string;
-        name: string;
-    }
-  }
 
   // Represents attributes for a podcast episode
   interface PodcastAttributes {
