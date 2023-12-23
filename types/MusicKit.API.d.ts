@@ -425,6 +425,7 @@ declare namespace MusicKit {
       catalog: Relationship<Playlists>;
       tracks: Relationship<MusicVideos | Songs>;
     };
+    parent: string; // @NOTE: This is not officially used. Just internally used in Cider.
   }
 
   /**
