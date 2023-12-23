@@ -390,6 +390,7 @@ declare namespace MusicKit {
       url: string;
       workName?: string;
       artistUrl?: string;
+      inFavorites?: boolean;
     };
     relationships?: {
       albums?: Relationship<Albums>;
