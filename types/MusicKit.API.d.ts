@@ -410,6 +410,7 @@ declare namespace MusicKit {
     id: MusicItemID;
     type: 'library-playlists' | 'library-playlist-folders';
     attributes?: {
+      hasCollaboration?: boolean;
       trackCount?: number;
       canDelete: boolean;
       canEdit: boolean;
