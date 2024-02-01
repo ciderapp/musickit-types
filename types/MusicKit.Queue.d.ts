@@ -20,6 +20,10 @@ declare namespace MusicKit {
          */
         readonly nextPlayableItem?: MediaItem | undefined;
         /**
+         * The next playable index in the queue.
+         */
+        readonly nextPlayableItemIndex: number;
+        /**
          * The current queue position.
          */
         readonly position: number;
@@ -27,6 +31,14 @@ declare namespace MusicKit {
          * The previous playable media item in the queue.
          */
         readonly previousPlayableItem?: MediaItem | undefined;
+        /**
+         * The previous playable index in the queue.
+         */
+        readonly previousPlayableItemIndex: number;
+        /**
+         * no idea what this is
+         */
+        readonly hasAutoplayStation: boolean;
 
         /**
          * Add an event listener for a MusicKit queue by name.
