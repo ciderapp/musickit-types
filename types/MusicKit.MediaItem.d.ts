@@ -154,6 +154,10 @@ declare namespace MusicKit {
      * @deprecated
      */
     readonly songId: string;
+    /**
+     * Autoplay status of the item
+     */
+    readonly isAutoplay: boolean;
   }
 
   /**
