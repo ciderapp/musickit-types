@@ -1,4 +1,19 @@
 declare namespace MusicKit {
+
+    /**
+     * A standard queue item
+     */
+    interface QueueItems {
+        /**
+         * Whether the item is an autoplay item or not.
+         */
+        isAutoplay: boolean;
+        /**
+         * The media item.
+         */
+        item: MediaItem;
+    }
+
     /**
      * An array of media items to be played.
      */
@@ -20,6 +35,10 @@ declare namespace MusicKit {
          */
         readonly nextPlayableItem?: MediaItem | undefined;
         /**
+         * The next playable index in the queue.
+         */
+        readonly nextPlayableItemIndex: number;
+        /**
          * The current queue position.
          */
         readonly position: number;
@@ -27,6 +46,22 @@ declare namespace MusicKit {
          * The previous playable media item in the queue.
          */
         readonly previousPlayableItem?: MediaItem | undefined;
+        /**
+         * The previous playable index in the queue.
+         */
+        readonly previousPlayableItemIndex: number;
+        /**
+         * @TODO: Add description
+         */
+        readonly hasAutoplayStation: boolean;
+        /**
+         * The queue items but with some extra properties.
+         */
+        readonly _queueItems: QueueItems[];
+        /**
+         * Reindexes the queue.
+         */
+        _reindex(): void;
 
         /**
          * Add an event listener for a MusicKit queue by name.
