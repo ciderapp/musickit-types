@@ -870,6 +870,7 @@ declare namespace MusicKit {
     "artists"?: { [key: string]: MusicKit.Artists };
     "playlists"?: { [key: string]: MusicKit.Playlists };
     "storefronts"?: { [key: string]: MusicKit.Storefronts };
+    "library-playlist-folders"?: { [key: string]: MusicKit.LibraryPlaylists };
     "library-playlists"?: { [key: string]: MusicKit.LibraryPlaylists };
     "library-songs"?: { [key: string]: MusicKit.LibrarySongs };
     "library-albums"?: { [key: string]: MusicKit.LibraryAlbums };
