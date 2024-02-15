@@ -13,6 +13,12 @@ declare namespace MusicKit {
   type ContentRating = 'clean' | 'explicit' | null;
 
   /**
+   * Resource tags that can help understand a resource.
+   * Currently, only 'favorited' is supported. (afaik)
+   */
+  type Tags = ['favorited']
+
+  /**
    * A to-one or to-many relationship from one resource object to others.
    * https://developer.apple.com/documentation/applemusicapi/relationship
    */
@@ -499,6 +505,7 @@ declare namespace MusicKit {
       editorialNotes?: EditorialNotes;
       versionHash?: string;
       trackTypes: Array<'music-videos' | 'songs'>;
+      tags?: Tags;
     };
     relationships?: {
       curator?: Relationship<Activities | AppleCurators | Curators>;
