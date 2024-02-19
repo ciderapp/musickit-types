@@ -107,6 +107,7 @@ declare namespace MusicKit {
     readonly editorialVideo?: { [key in EditorialVideoTypes]: EditorialVideo };
     readonly versionHash?: string;
     readonly trackTypes?: Array<'music-videos' | 'songs'>;
+    readonly personalRating?: number;
   }
 
   /**
