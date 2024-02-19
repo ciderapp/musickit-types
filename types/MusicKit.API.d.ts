@@ -59,6 +59,7 @@ declare namespace MusicKit {
 
   /**
    * Interface representing the potential attributes for a resource object.
+   * @deprecated - not a good way to do this, just a placeholder for now.
    */
   interface ResourceAttributes {
     readonly albumName: string;
@@ -107,7 +108,6 @@ declare namespace MusicKit {
     readonly editorialVideo?: { [key in EditorialVideoTypes]: EditorialVideo };
     readonly versionHash?: string;
     readonly trackTypes?: Array<'music-videos' | 'songs'>;
-    readonly personalRating?: number;
   }
 
   /**
@@ -168,6 +168,7 @@ declare namespace MusicKit {
       url: string;
       workName?: string;
       artistUrl?: string;
+      personalRating?: number;
     };
     relationships?: {
       albums?: Relationship<Albums>;
@@ -209,6 +210,7 @@ declare namespace MusicKit {
       workId?: string;
       workName?: string;
       artistUrl?: string;
+      personalRating?: number;
     };
     relationships: {
       albums: Relationship<Albums>;
@@ -276,6 +278,7 @@ declare namespace MusicKit {
       playParams: PlayParameters;
       stationProviderName: string;
       url: string;
+      personalRating?: number;
     };
   }
 
@@ -325,6 +328,7 @@ declare namespace MusicKit {
       dateAdded?: string;
       upc?: string;
       url: string;
+      personalRating?: number;
     };
     relationships: {
       artists: Relationship<Artists>;
@@ -357,6 +361,7 @@ declare namespace MusicKit {
       releaseDate?: string;
       trackCount: number;
       genreNames: string[];
+      personalRating?: number;
     };
     relationships: {
       artists: Relationship<Artists>;
@@ -397,6 +402,7 @@ declare namespace MusicKit {
       workName?: string;
       artistUrl?: string;
       inFavorites?: boolean;
+      personalRating?: number;
     };
     relationships?: {
       albums?: Relationship<Albums>;
@@ -428,6 +434,7 @@ declare namespace MusicKit {
       isPublic: boolean;
       name: string;
       playParams: PlayParameters;
+      personalRating?: number;
     };
     relationships?: {
       catalog: Relationship<Playlists>;
@@ -449,6 +456,7 @@ declare namespace MusicKit {
       url: string;
       inFavorites?: boolean;
       artwork?: Artwork;
+      personalRating?: number;
     };
     relationships: {
       albums: Relationship<Albums>;
@@ -507,6 +515,7 @@ declare namespace MusicKit {
       versionHash?: string;
       trackTypes: Array<'music-videos' | 'songs'>;
       tags?: Tags;
+      personalRating?: number;
     };
     relationships?: {
       curator?: Relationship<Activities | AppleCurators | Curators>;
