@@ -105,7 +105,7 @@ declare namespace MusicKit {
     readonly audioTraits?: string[];
     readonly isChart?: boolean;
     readonly playlistType?: 'editorial' | 'external' | 'personal-mix' | 'replay' | 'user-shared';
-    readonly editorialVideo?: { [key in EditorialVideoTypes]: EditorialVideo };
+    readonly editorialVideo?: EditorialVideo;
     readonly versionHash?: string;
     readonly trackTypes?: Array<'music-videos' | 'songs'>;
   }
@@ -510,7 +510,7 @@ declare namespace MusicKit {
       name: string;
       isChart: boolean;
       playlistType: 'editorial' | 'external' | 'personal-mix' | 'replay' | 'user-shared';
-      editorialVideo: { [key in EditorialVideoTypes]: EditorialVideo };
+      editorialVideo: EditorialVideo;
       editorialNotes?: EditorialNotes;
       versionHash?: string;
       trackTypes: Array<'music-videos' | 'songs'>;
@@ -799,10 +799,16 @@ declare namespace MusicKit {
    * An object that represents the editorial video for a music item.
    * @Note - This is not documented in the Apple Music API docs.
    */
-  interface EditorialVideo {
+  interface Video {
     previewFrame: Artwork;
     video: string
   }
+
+  /**
+   * An object that represents an editorial video (animated artwork) for a music item.
+   * @Note - This is not documented in the Apple Music API docs.
+   */
+  type EditorialVideo = { [key in EditorialVideoTypes]: Video }
 
   /**
    * An object that represents a preview for resources.
