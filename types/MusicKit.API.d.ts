@@ -709,6 +709,7 @@ declare namespace MusicKit {
    * @undocumented
    */
   interface Credit extends Resource {
+    type: 'role-categories'
     attributes: {
       kind: 'performer' | 'composer-and-lyrics' | 'production-and-engineering' | string
       title: string;
