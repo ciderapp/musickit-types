@@ -693,6 +693,45 @@ declare namespace MusicKit {
   }
 
   /**
+   * A resource object that represents a lyrics object
+   * @undocumented
+   */
+  interface Lyrics extends Resource {
+    type: 'lyrics';
+    attributes: {
+      playParams: PlayParameters;
+      ttml: string;
+    }
+  }
+
+  /**
+   * A resource object that represents a credit object
+   * @undocumented
+   */
+  interface Credit extends Resource {
+    attributes: {
+      kind: 'performer' | 'composer-and-lyrics' | 'production-and-engineering' | string
+      title: string;
+    }
+    relationships: {
+      'credit-artists': Relationship<CreditArtist>
+    }
+  }
+
+  /**
+   * A resource object that represents a credit artist
+   * @undocumented
+   */
+  interface CreditArtist extends Resource {
+    type: 'credit-artists';
+    attributes: {
+      name: string;
+      roleNames: string[];
+      artwork: Artwork;
+    }
+  }
+
+  /**
    * A resource object that represents a rating for a resource.
    * @undocumented
    */
@@ -749,6 +788,7 @@ declare namespace MusicKit {
     isLibrary?: boolean;
     globalId?: string;
     versionHash?: string;
+    displayType?: number;
   }
 
   /**
@@ -885,7 +925,6 @@ declare namespace MusicKit {
     "/v1/catalog/${storefront}/podcasts/${id}/episodes": MusicKit.PodcastEpisode[]
   }
 
-  type ResourceTypes = "songs" | "albums" | "artists" | "playlists" | "storefronts" | "library-playlists" | "library-songs" | "library-albums" | "library-artists" | "curator" | "social-profiles" | "apple-curators";
 
   type ResourceMap = {
     "songs"?: { [key: string]: MusicKit.Songs };
@@ -901,7 +940,11 @@ declare namespace MusicKit {
     "curator"?: { [key: string]: MusicKit.Curators };
     "social-profiles"?: { [key: string]: MusicKit.SocialProfile };
     "apple-curators"?: { [key: string]: MusicKit.AppleCurators };
+    "credit-artists"?: { [key: string]: MusicKit.CreditArtist };
+    "lyrics"?: { [key: string]: MusicKit.Lyrics };
+    "credits"?: { [key: string]: MusicKit.Credit };
   }
+  type ResourceTypes = keyof ResourceMap;
 
   // Query Response Template
   interface QueryResponse<T = unknown> {
