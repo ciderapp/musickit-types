@@ -334,6 +334,7 @@ declare namespace MusicKit {
       trackCount: number;
       dateAdded?: string;
       upc?: string;
+      editorialVideo?: EditorialVideo;
       url: string;
       personalRating?: number;
     };
@@ -522,7 +523,7 @@ declare namespace MusicKit {
         | "personal-mix"
         | "replay"
         | "user-shared";
-      editorialVideo: EditorialVideo;
+      editorialVideo?: EditorialVideo;
       editorialNotes?: EditorialNotes;
       versionHash?: string;
       trackTypes: Array<"music-videos" | "songs">;
