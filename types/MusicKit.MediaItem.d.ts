@@ -39,121 +39,162 @@ declare namespace MusicKit {
     /**
      * Asset Url for the MediaItem
      */
-    readonly assetURL: string;
+    assetURL: string;
+
     /**
      * The attributes object for the media item.
      */
-    readonly attributes: MediaItemAttributes;
-    readonly channels: number;
-    readonly cloudId: string;
-    readonly contentType: string;
-    readonly dispatchNamespace: string;
+    attributes: MediaItemAttributes;
+    channels?: number;
+    cloudId?: string;
+    contentType?: string;
+    dispatchNamespace?: string;
+
     /**
      * The flavor of the media item. Can be used to determine the bitrate of the media item.
      */
-    readonly flavor: string;
-    readonly hlsMetadata: unknown;
+    flavor: string;
+    hlsMetadata: unknown;
+
+    /**
+     * The URL to the media item.
+     */
+    href: string;
+
     /**
      * The identifier for the media item.
      */
-    readonly id: string;
+    id: string;
+
+    /**
+     * Asset URLs for the media item.
+     */
+    keyURLs?: {
+      "hls-key-cert-url": string;
+      "hls-key-server-url": string;
+      "widevine-cert-url"?: string;
+    }
+
     /**
      * A string of information about the album.
+     * @getter
      */
-    readonly albumInfo: string;
+    albumInfo: string;
+
     /**
      * The id of the media item's album.
+     * @getter
      */
     albumId?: string;
+
     /**
      * The title of the album.
+     * @getter
      */
-    readonly albumName: string;
+    albumName: string;
+
     /**
      * The artist for a media item.
+     * @getter
      */
-    readonly artistName: string;
+    artistName: string;
+
     /**
      * The artwork object for the media item.
+     * @getter
      */
-    readonly artwork: Artwork;
+    artwork: Artwork;
+
     /**
      * The artwork image for the media item.
+     * @getter
      */
-    readonly artworkURL: string;
+    artworkURL: string;
+
     /**
      * A string containing the content rating for the media item.
+     * @getter
      */
-    readonly contentRating: string;
+    contentRating: string;
+
     /**
      * The disc number where the media item appears.
+     * @getter
      */
-    readonly discNumber: number;
+    discNumber: number;
+
     /**
      * A string of common information about the media item.
      */
-    readonly info: string;
+    info: string;
+
     /**
      * A Boolean value that indicates whether the item has explicit lyrics or language.
      */
-    readonly isExplicitItem: boolean;
+    isExplicitItem: boolean;
+
     /**
      * A Boolean value that indicated whether the item is playable.
      */
-    readonly isPlayable: boolean;
+    isPlayable: boolean;
+
     /**
      * A Boolean value indicating whether the media item is prepared to play.
      */
-    readonly isPreparedToPlay: boolean;
+    isPreparedToPlay: boolean;
+
     /**
      * The ISRC (International Standard Recording Code) for a media item.
      */
-    readonly isrc: string;
+    isrc: string;
+
     /**
      * The playback duration of the media item.
      */
-    readonly playbackDuration: number;
-    readonly playlistArtworkURL: string;
-    readonly playlistName: string;
+    playbackDuration: number;
+    playlistArtworkURL: string;
+    playlistName: string;
+
     /**
      * The URL to an unencrypted preview of the media item.
      */
-    readonly previewURL: string;
+    previewURL: string;
+
     /**
      * The release date of the media item.
      */
-    readonly releaseDate?: Date | undefined;
+    releaseDate?: Date | undefined;
+
     /**
      * The name of the media item.
      */
-    readonly title: string;
+    title: string;
+
     /**
      * The number of the media item in the album's track list.
      */
-    readonly trackNumber: number;
+    trackNumber: number;
+
     /**
      * The type of the media item.
      */
-    readonly type: string;
+    type: string;
+
     /**
      * Relationships of the media item
      */
-    readonly relationships: unknown;
+    relationships: unknown;
+
     /**
      * A Boolean value that indicates whether the item is a cloud upload.
      */
-    readonly isCloudUpload: boolean;
-    /**
-     * The ID of the media item.
-     * @deprecated
-     */
-    readonly _songId: string;
+    isCloudUpload: boolean;
 
     /**
      * Also the ID of the media item.
      * @deprecated
      */
-    readonly songId: string;
+    songId: string;
   }
 
   /**
@@ -168,106 +209,106 @@ declare namespace MusicKit {
     /**
      * The title of the album.
      */
-    readonly albumName: string;
+    albumName: string;
     /**
      * The artist for a media item.
      */
-    readonly artistName: string;
+    artistName: string;
     /**
      * The artwork object for the media item.
      */
-    readonly artwork: Artwork;
+    artwork: Artwork;
     /**
      * The composer for a media item.
      */
-    readonly composerName: string;
+    composerName: string;
     /**
      * The current playback progress of the media item.
      */
-    readonly currentPlaybackProgress: number;
+    currentPlaybackProgress: number;
     /**
      * The current playback time of the media item.
      */
-    readonly currentPlaybackTime: number;
+    currentPlaybackTime: number;
     /**
      * The disc number where the media item appears.
      */
-    readonly discNumber: number;
+    discNumber: number;
     /**
      * The duration of the media item.
      */
-    readonly durationInMillis: number;
+    durationInMillis: number;
     /**
      * The end time of the media item.
      */
-    readonly endTime: number;
+    endTime: number;
     /**
      * The genre of the media item.
      */
-    readonly genreNames: string[];
+    genreNames: string[];
     /**
      * The ISRC (International Standard Recording Code) for a media item.
      */
-    readonly isrc: string;
+    isrc: string;
     /**
      * The kind of the media item.
      */
-    readonly kind: string;
+    kind: string;
     /**
      * The name of the media item.
      */
-    readonly name: string;
+    name: string;
     /**
      * The playback parameters for the media item.
      */
-    readonly playParams: { [key: string]: any };
+    playParams: { [key: string]: any };
     /**
      * The previews for the media item.
      */
-    readonly previews: any[];
+    previews: any[];
     /**
      * The release date of the media item.
      */
-    readonly releaseDate: string;
+    releaseDate: string;
     /**
      * The remaining playback time of the media item.
      */
-    readonly remainingTime: number;
+    remainingTime: number;
     /**
      * The song id of the media item.
      */
-    readonly songId: string;
+    songId: string;
     /**
      * The cloud Id for the uploaded media item.
      */
-    readonly cloudId?: string;
+    cloudId?: string;
     /**
      * The start time of the media item.
      */
-    readonly startTime: number;
+    startTime: number;
     /**
      * The status of the media item.
      */
-    readonly status: keyof typeof MusicKit.PlaybackStates;
+    status: keyof typeof MusicKit.PlaybackStates;
     /**
      * Is Playing
      */
-    readonly isPlaying: boolean;
+    isPlaying: boolean;
     /**
      * The track number of the media item.
      */
-    readonly trackNumber: number;
+    trackNumber: number;
     /**
      * The URL of the media item.
      */
-    readonly url: { [key: string]: any };
+    url: { [key: string]: any };
     /**
      * The editorial kind of the media item.
      */
-    readonly editorialElementKind?: string
+    editorialElementKind?: string
     /**
      * The editorial elements display style.
      */
-    readonly displayStyle?: string
+    displayStyle?: string
   }
 }
