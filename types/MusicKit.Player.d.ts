@@ -27,6 +27,14 @@ declare namespace MusicKit {
     type PlayerShuffleMode = 0 | 1;
     type MediaItemPosition = number;
 
+    interface Container {
+        id: string;
+        type: string;
+        href?: string;
+        name?: string;
+        attributes?: Record<string, any>
+    }
+
     /**
      * A media player that represents the media player for a MusicKit instance.
      */
@@ -68,7 +76,7 @@ declare namespace MusicKit {
          * that you have designated to begin playback.
          */
         readonly nowPlayingItem: MediaItem & {
-            _container: Resource;
+            _container: Container;
         };
         /**
          * The index of the now playing item in the current playback queue.
