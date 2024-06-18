@@ -64,57 +64,144 @@ declare namespace MusicKit {
    * @deprecated - not a good way to do this, just a placeholder for now.
    */
   interface ResourceAttributes {
-    readonly albumName: string;
-    readonly artistName: string;
-    readonly artwork: Artwork;
-    readonly attribution?: string;
-    readonly composerName?: string;
-    readonly contentRating?: ContentRating;
-    readonly discNumber?: number;
-    readonly durationInMillis: number;
-    readonly editorialNotes?: EditorialNotes;
-    readonly genreNames: string[];
-    readonly hasLyrics: boolean;
-    readonly isrc?: string;
-    readonly movementCount?: number;
-    readonly movementName?: string;
-    readonly movementNumber?: number;
-    readonly name: string;
-    readonly playParams?: PlayParameters;
-    readonly previews?: Preview[];
-    readonly releaseDate?: string;
-    readonly trackNumber?: number;
-    readonly url?: string;
-    readonly workName?: string;
-    readonly artistUrl?: string;
-    readonly currentPlaybackProgress?: number;
-    readonly currentPlaybackTime?: number;
-    readonly endTime?: number;
-    readonly kind?: string;
-    readonly remainingTime?: number;
-    readonly songId?: string;
-    readonly startTime?: number;
-    readonly isPlaying?: boolean;
-    readonly editorialElementKind?: string;
-    readonly displayStyle?: string;
-    readonly editorialArtwork?: EditorialArtwork;
-    readonly lastModifiedDate?: string;
-    readonly supportsSings?: boolean;
-    readonly description?: DescriptionAttribute;
-    readonly trackCount?: number;
-    readonly curatorName?: string;
-    readonly curatorSocialHandle?: string;
-    readonly audioTraits?: string[];
-    readonly isChart?: boolean;
-    readonly playlistType?:
+    
+    /**
+     * The title of the album.
+     */
+    albumName: string;
+
+    /**
+     * The artist for a media item.
+     */
+    artistName: string;
+
+    /**
+     * The artwork object for the media item.
+     */
+    artwork: Artwork;
+
+    /**
+     * The composer for a media item.
+     */
+    composerName?: string;
+
+    /**
+     * The disc number where the media item appears.
+     */
+    discNumber?: number;
+
+    /**
+     * The duration of the media item.
+     */
+    durationInMillis: number;
+
+    /**
+     * The genre of the media item.
+     */
+    genreNames: string[];
+
+    /**
+     * The ISRC (International Standard Recording Code) for a media item.
+     */
+    isrc?: string;
+
+    /**
+     * The kind of the media item.
+     */
+    kind?: string;
+
+    /**
+     * The name of the media item.
+     */
+    name: string;
+
+    /**
+     * The playback parameters for the media item.
+     */
+    playParams: PlayParameters;
+
+    /**
+     * The previews for the media item.
+     */
+    previews?: Preview[];
+
+    /**
+     * The release date of the media item.
+     */
+    releaseDate: string;
+
+    /**
+     * The cloud Id for the uploaded media item.
+     */
+    cloudId?: string;
+
+    /**
+     * The status of the media item.
+     */
+    status: keyof typeof MusicKit.PlaybackStates;
+
+    /**
+     * The track number of the media item.
+     */
+    trackNumber?: number;
+    /**
+     * The URL of the media item.
+     */
+    url?: string;
+
+    /**
+     * The editorial kind of the media item.
+     */
+    editorialElementKind?: string
+
+    /**
+     * The description and notes for editorial usage.
+     */
+    editorialNotes?: EditorialNotes
+
+    /**
+     * The editorial artwork for the media item.
+     */
+    editorialArtwork?: EditorialArtwork;
+
+    /**
+     * The editorial elements display style.
+     */
+    displayStyle?: string
+
+    /**
+     * The Url to the artist's page.
+     */
+    artistUrl?: string;
+
+    /**
+     * Undocumented Items, not in the Apple Music API docs, and don't really know what they are.
+     * @undocumented
+     */
+    attribution?: string;
+    contentRating?: ContentRating;
+    hasLyrics: boolean;
+    movementCount?: number;
+    movementName?: string;
+    movementNumber?: number;
+    workName?: string;
+    lastModifiedDate?: string;
+    supportsSings?: boolean;
+    description?: DescriptionAttribute;
+    trackCount?: number;
+    curatorName?: string;
+    curatorSocialHandle?: string;
+    audioTraits?: string[];
+    isChart?: boolean;
+    playlistType?:
       | "editorial"
       | "external"
       | "personal-mix"
       | "replay"
       | "user-shared";
-    readonly editorialVideo?: EditorialVideo;
-    readonly versionHash?: string;
-    readonly trackTypes?: Array<"music-videos" | "songs">;
+    editorialVideo?: EditorialVideo;
+    versionHash?: string;
+    trackTypes?: Array<"music-videos" | "songs">;
   }
 
   /**

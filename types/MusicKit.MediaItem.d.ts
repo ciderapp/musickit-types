@@ -1,4 +1,38 @@
 declare namespace MusicKit {
+  interface MediaItemAttributes extends ResourceAttributes {
+    /**
+     * The current playback progress of the media item.
+     */
+    currentPlaybackProgress?: number;
+    /**
+     * The current playback time of the media item.
+     */
+    currentPlaybackTime?: number;
+    /**
+     * The song id of the media item.
+     */
+    songId?: string;
+    /**
+     * Is Playing
+     */
+    isPlaying?: boolean;
+    /**
+     * The start time of the media item.
+     * @CiderSpecific
+     */
+    startTime: number;
+    /**
+     * The remaining playback time of the media item.
+     * @CiderSpecific
+     */
+    remainingTime?: number;
+    /**
+     * The end time of the media item.
+     * @CiderSpecific
+     */
+    endTime?: number;
+  }
+
   /**
    * The options to use when defining a media item.
    */
@@ -25,7 +59,7 @@ declare namespace MusicKit {
   /**
    * This class represents a single media item.
    */
-  class MediaItem {
+  class MediaItem implements Resource {
     /**
      * A constructor that creates a new media item from specified options.
      */
@@ -73,7 +107,7 @@ declare namespace MusicKit {
       "hls-key-cert-url": string;
       "hls-key-server-url": string;
       "widevine-cert-url"?: string;
-    }
+    };
 
     /**
      * A string of information about the album.
@@ -192,123 +226,7 @@ declare namespace MusicKit {
 
     /**
      * Also the ID of the media item.
-     * @deprecated
      */
     songId: string;
-  }
-
-  /**
-   * This class is for attributes
-   */
-  class MediaItemAttributes {
-    /**
-     * A constructor that creates a new media item from specified options.
-     */
-    constructor(options?: MediaItemOptions);
-
-    /**
-     * The title of the album.
-     */
-    albumName: string;
-    /**
-     * The artist for a media item.
-     */
-    artistName: string;
-    /**
-     * The artwork object for the media item.
-     */
-    artwork: Artwork;
-    /**
-     * The composer for a media item.
-     */
-    composerName: string;
-    /**
-     * The current playback progress of the media item.
-     */
-    currentPlaybackProgress: number;
-    /**
-     * The current playback time of the media item.
-     */
-    currentPlaybackTime: number;
-    /**
-     * The disc number where the media item appears.
-     */
-    discNumber: number;
-    /**
-     * The duration of the media item.
-     */
-    durationInMillis: number;
-    /**
-     * The end time of the media item.
-     */
-    endTime: number;
-    /**
-     * The genre of the media item.
-     */
-    genreNames: string[];
-    /**
-     * The ISRC (International Standard Recording Code) for a media item.
-     */
-    isrc: string;
-    /**
-     * The kind of the media item.
-     */
-    kind: string;
-    /**
-     * The name of the media item.
-     */
-    name: string;
-    /**
-     * The playback parameters for the media item.
-     */
-    playParams: { [key: string]: any };
-    /**
-     * The previews for the media item.
-     */
-    previews: any[];
-    /**
-     * The release date of the media item.
-     */
-    releaseDate: string;
-    /**
-     * The remaining playback time of the media item.
-     */
-    remainingTime: number;
-    /**
-     * The song id of the media item.
-     */
-    songId: string;
-    /**
-     * The cloud Id for the uploaded media item.
-     */
-    cloudId?: string;
-    /**
-     * The start time of the media item.
-     */
-    startTime: number;
-    /**
-     * The status of the media item.
-     */
-    status: keyof typeof MusicKit.PlaybackStates;
-    /**
-     * Is Playing
-     */
-    isPlaying: boolean;
-    /**
-     * The track number of the media item.
-     */
-    trackNumber: number;
-    /**
-     * The URL of the media item.
-     */
-    url: { [key: string]: any };
-    /**
-     * The editorial kind of the media item.
-     */
-    editorialElementKind?: string
-    /**
-     * The editorial elements display style.
-     */
-    displayStyle?: string
   }
 }
