@@ -4,14 +4,7 @@ declare namespace MusicKit {
      * The current playback time of the media item.
      */
     currentPlaybackTime?: number;
-    /**
-     * The song id of the media item.
-     */
-    songId?: string;
-    /**
-     * Is Playing
-     */
-    isPlaying?: boolean;
+
     /**
      * The remaining playback time of the media item.
      */
