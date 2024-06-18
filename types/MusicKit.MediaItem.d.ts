@@ -16,21 +16,6 @@ declare namespace MusicKit {
      * Is Playing
      */
     isPlaying?: boolean;
-    /**
-     * The start time of the media item.
-     * @CiderSpecific
-     */
-    startTime: number;
-    /**
-     * The remaining playback time of the media item.
-     * @CiderSpecific
-     */
-    remainingTime?: number;
-    /**
-     * The end time of the media item.
-     * @CiderSpecific
-     */
-    endTime?: number;
   }
 
   /**
