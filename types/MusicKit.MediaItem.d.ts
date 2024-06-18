@@ -1,10 +1,6 @@
 declare namespace MusicKit {
   interface MediaItemAttributes extends ResourceAttributes {
     /**
-     * The current playback progress of the media item.
-     */
-    currentPlaybackProgress?: number;
-    /**
      * The current playback time of the media item.
      */
     currentPlaybackTime?: number;
@@ -16,6 +12,10 @@ declare namespace MusicKit {
      * Is Playing
      */
     isPlaying?: boolean;
+    /**
+     * The remaining playback time of the media item.
+     */
+    remainingTime?: number;
   }
 
   /**

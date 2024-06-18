@@ -59,6 +59,10 @@ declare namespace MusicKit {
      * The playback speed.
      */
     playbackRate: number
+    /**
+     * The current playback progress
+     */
+    currentPlaybackProgress: number;
 
     /**
      * Add an event listener for a MusicKit instance by name.
