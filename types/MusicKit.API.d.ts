@@ -902,6 +902,9 @@ declare namespace MusicKit {
     kind: string;
     isLibrary?: boolean;
     globalId?: string;
+    catalogId?: string;
+    reportingId?: string;
+    reporting?: boolean;
     versionHash?: string;
     displayType?: number;
   }
