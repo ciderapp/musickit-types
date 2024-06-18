@@ -116,12 +116,6 @@ declare namespace MusicKit {
     albumInfo: string;
 
     /**
-     * The id of the media item's album.
-     * @getter
-     */
-    albumId?: string;
-
-    /**
      * The title of the album.
      * @getter
      */
@@ -149,7 +143,7 @@ declare namespace MusicKit {
      * A string containing the content rating for the media item.
      * @getter
      */
-    contentRating: string;
+    contentRating: "explicit" | undefined;
 
     /**
      * The disc number where the media item appears.
@@ -228,5 +222,50 @@ declare namespace MusicKit {
      * Also the ID of the media item.
      */
     songId: string;
+
+    // Unknown / Self-Defined Methods
+    ageGatePolicy: unknown;
+    assets: MediaItemAsset[];
+    canPlay: boolean;
+    container: Container;
+    context: Context;
+    defaultPlayable: unknown;
+    hasContainerArtwork: string;
+    hasOffersHlsUrl: boolean;
+    hasPlaylistContainer: Resource;
+    isAOD: boolean;
+    isAlgoStation: boolean;
+    isAssetScrubbingDisabled: boolean;
+    isCloudItem: boolean;
+    isEqual: (e: MediaItem) => boolean;
+    isLinearStream: boolean;
+    isLiveAudioStation: boolean;
+    isLiveRadioStation: boolean;
+    isLiveVideoStation: boolean;
+    isLoading: boolean;
+    isPlayableMediaType: boolean;
+    isPlaying: boolean;
+    isRadioEpisode: boolean;
+    isRadioStation: boolean;
+    isReady: boolean;
+    isRestricted: boolean;
+    isSong: boolean;
+    isUTS: boolean;
+    isUnavailable: boolean;
+    needsPlayParams: boolean;
+    normalizedType: string;
+    notSupported: () => void;
+    offers: unknown;
+    offersHlsUrl: unknown;
+    playEvent: unknown;
+    playParams: PlayParameters;
+    playRawAssetURL: boolean;
+    playbackData: (e: MediaItem) => void;
+    rating: number | undefined;
+    rawAssetUrl: string | undefined;
+    resetState: () => void;
+    restrict: () => void;
+    state: number;
+    supportsLinearScrubbing: boolean;
   }
 }
