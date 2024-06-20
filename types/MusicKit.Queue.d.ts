@@ -25,7 +25,7 @@ declare namespace MusicKit {
         /**
          * An array of all the media items in the queue.
          */
-        readonly items: MediaItem[];
+        items: MediaItem[];
         /**
          * The number of items in the queue.
          */
@@ -57,7 +57,7 @@ declare namespace MusicKit {
         /**
          * The queue items but with some extra properties.
          */
-        readonly _queueItems: QueueItems[];
+        _queueItems: QueueItems[];
         /**
          * Reindexes the queue.
          */

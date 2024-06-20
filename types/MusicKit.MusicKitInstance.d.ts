@@ -144,6 +144,11 @@ declare namespace MusicKit {
     queue: Queue;
 
     /**
+     * Clear the queue
+     */
+    clearQueue(): void;
+
+    /**
      * Starts playback of the next media item in the playback queue.
      */
     skipToNextItem(): Promise<MediaItemPosition>;
