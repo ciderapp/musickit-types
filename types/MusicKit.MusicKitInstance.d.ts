@@ -169,6 +169,22 @@ declare namespace MusicKit {
     unauthorize(): Promise<any>;
 
     /**
+     * Save the current playback state
+     */
+    savePlaybackState(): void;
+
+    /**
+     * The previous playback state
+     */
+    _previousPlaybackState: {
+      autoplayEnabled: boolean
+      playbackMode: number
+      repeatMode: number
+      shuffleMode: number
+      volume: number
+    };
+
+    /**
      * Services
      */
     services?: any;
