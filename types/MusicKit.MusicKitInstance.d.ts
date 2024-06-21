@@ -174,6 +174,11 @@ declare namespace MusicKit {
     savePlaybackState(): void;
 
     /**
+     * Restore the previous playback state
+     */
+    restorePlaybackState(): void;
+
+    /**
      * The previous playback state
      */
     _previousPlaybackState: {
