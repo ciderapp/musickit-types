@@ -169,6 +169,11 @@ declare namespace MusicKit {
     unauthorize(): Promise<any>;
 
     /**
+     * The container element for the video player. Should contain a video element.
+     */
+    videoContainerElement: HTMLDivElement;
+
+    /**
      * Save the current playback state
      */
     savePlaybackState(): void;
