@@ -38,6 +38,7 @@ declare namespace MusicKit {
     "credit-artists"?: MusicKit.CreditArtist;
     lyrics?: MusicKit.Lyrics;
     credits?: MusicKit.Credit;
+    catalog?: MusicKit.Playlists;
   }
 
   /**
