@@ -1,5 +1,9 @@
 declare namespace MusicKit {
-  interface MediaItemAttributes extends ResourceAttributes {
+
+  /**
+   * The attributes for the media item.
+   */
+  interface MediaItemAttributes {
     /**
      * The current playback time of the media item.
      */
@@ -9,6 +13,144 @@ declare namespace MusicKit {
      * The remaining playback time of the media item.
      */
     remainingTime?: number;
+
+    /**
+     * The title of the album.
+     */
+    albumName: string;
+
+    /**
+     * The artist for a media item.
+     */
+    artistName: string;
+
+    /**
+     * The artwork object for the media item.
+     */
+    artwork: Artwork;
+
+    /**
+     * The composer for a media item.
+     */
+    composerName?: string;
+
+    /**
+     * The disc number where the media item appears.
+     */
+    discNumber?: number;
+
+    /**
+     * The duration of the media item.
+     */
+    durationInMillis: number;
+
+    /**
+     * The genre of the media item.
+     */
+    genreNames: string[];
+
+    /**
+     * The ISRC (International Standard Recording Code) for a media item.
+     */
+    isrc?: string;
+
+    /**
+     * The kind of the media item.
+     */
+    kind?: string;
+
+    /**
+     * The name of the media item.
+     */
+    name: string;
+
+    /**
+     * The playback parameters for the media item.
+     */
+    playParams: PlayParameters;
+
+    /**
+     * The previews for the media item.
+     */
+    previews?: Preview[];
+
+    /**
+     * The release date of the media item.
+     */
+    releaseDate: string;
+
+    /**
+     * The cloud Id for the uploaded media item.
+     */
+    cloudId?: string;
+
+    /**
+     * The status of the media item.
+     */
+    status: keyof typeof MusicKit.PlaybackStates;
+
+    /**
+     * The track number of the media item.
+     */
+    trackNumber?: number;
+    /**
+     * The URL of the media item.
+     */
+    url?: string;
+
+    /**
+     * The editorial kind of the media item.
+     */
+    editorialElementKind?: string;
+
+    /**
+     * The description and notes for editorial usage.
+     */
+    editorialNotes?: EditorialNotes;
+
+    /**
+     * The editorial artwork for the media item.
+     */
+    editorialArtwork?: EditorialArtwork;
+
+    /**
+     * The editorial elements display style.
+     */
+    displayStyle?: string;
+
+    /**
+     * The Url to the artist's page.
+     */
+    artistUrl?: string;
+
+    /**
+     * Undocumented Items, not in the Apple Music API docs, and don't really know what they are.
+     * @undocumented
+     */
+    attribution?: string;
+    contentRating?: ContentRating;
+    hasLyrics: boolean;
+    movementCount?: number;
+    movementName?: string;
+    movementNumber?: number;
+    workName?: string;
+    lastModifiedDate?: string;
+    supportsSings?: boolean;
+    description?: DescriptionAttribute;
+    trackCount?: number;
+    curatorName?: string;
+    curatorSocialHandle?: string;
+    audioTraits?: string[];
+    isChart?: boolean;
+    playlistType?:
+      | "editorial"
+      | "external"
+      | "personal-mix"
+      | "replay"
+      | "user-shared";
+    editorialVideo?: EditorialVideo;
+    versionHash?: string;
+    trackTypes?: Array<"music-videos" | "songs">;
   }
 
   /**
@@ -35,9 +177,24 @@ declare namespace MusicKit {
   type Descriptor = MediaItem | string;
 
   /**
+   * This property describes the playback parameters for a media item or resource.
+   */
+  interface PlayParameters {
+    id: string;
+    kind: string;
+    isLibrary?: boolean;
+    globalId?: string;
+    catalogId?: string;
+    reportingId?: string;
+    reporting?: boolean;
+    versionHash?: string;
+    displayType?: number;
+  }
+
+  /**
    * This class represents a single media item.
    */
-  class MediaItem implements Resource {
+  class MediaItem {
     /**
      * A constructor that creates a new media item from specified options.
      */
@@ -162,7 +319,7 @@ declare namespace MusicKit {
     playlistName: string;
 
     /**
-     * The URL to an unencrypted preview of the media item.
+     * Th e URL to an unencrypted preview of the media item.
      */
     previewURL: string;
 
@@ -189,7 +346,7 @@ declare namespace MusicKit {
     /**
      * Relationships of the media item
      */
-    relationships: Record<string, Relationship<Resource> | Array<Relationship<Resource>>> | undefined;
+    relationships: Relationships;
 
     /**
      * A Boolean value that indicates whether the item is a cloud upload.

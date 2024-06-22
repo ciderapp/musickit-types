@@ -19,6 +19,35 @@ declare namespace MusicKit {
   type Tags = ["favorited"];
 
   /**
+   * The resource map for all resources from the Apple Music API with their respective types.
+   */
+  interface ResourceMap {
+    songs?: MusicKit.Songs;
+    albums?: MusicKit.Albums;
+    artists?: MusicKit.Artists;
+    playlists?: MusicKit.Playlists;
+    storefronts?: MusicKit.Storefronts;
+    "library-playlist-folders"?: MusicKit.LibraryPlaylists;
+    "library-playlists"?: MusicKit.LibraryPlaylists;
+    "library-songs"?: MusicKit.LibrarySongs;
+    "library-albums"?: MusicKit.LibraryAlbums;
+    "library-artists"?: MusicKit.Artists;
+    curator?: MusicKit.Curators;
+    "social-profiles"?: MusicKit.SocialProfile;
+    "apple-curators"?: MusicKit.AppleCurators;
+    "credit-artists"?: MusicKit.CreditArtist;
+    lyrics?: MusicKit.Lyrics;
+    credits?: MusicKit.Credit;
+  }
+
+  /**
+   * A map of all resources assigned to relationships returned from the Apple Music API.
+   */
+  type Relationships = {
+    [K in keyof MusicKit.ResourceMap]?: Relationship<MusicKit.ResourceMap[K]>;
+  };
+
+  /**
    * A to-one or to-many relationship from one resource object to others.
    * https://developer.apple.com/documentation/applemusicapi/relationship
    */
@@ -52,156 +81,12 @@ declare namespace MusicKit {
     type: string;
     href: string;
     attributes?: Record<string, any>;
-    relationships?:
-      | Record<string, Relationship<Resource> | Array<Relationship<Resource>>>
-      | any;
+    relationships?: Record<
+      string,
+      Relationship<Resource> | Array<Relationship<Resource>>
+    >;
     meta?: Record<string, any>;
     views?: Record<string, View<Resource>>;
-  }
-
-  /**
-   * Interface representing the potential attributes for a resource object.
-   * @deprecated - not a good way to do this, just a placeholder for now.
-   */
-  interface ResourceAttributes {
-    
-    /**
-     * The title of the album.
-     */
-    albumName: string;
-
-    /**
-     * The artist for a media item.
-     */
-    artistName: string;
-
-    /**
-     * The artwork object for the media item.
-     */
-    artwork: Artwork;
-
-    /**
-     * The composer for a media item.
-     */
-    composerName?: string;
-
-    /**
-     * The disc number where the media item appears.
-     */
-    discNumber?: number;
-
-    /**
-     * The duration of the media item.
-     */
-    durationInMillis: number;
-
-    /**
-     * The genre of the media item.
-     */
-    genreNames: string[];
-
-    /**
-     * The ISRC (International Standard Recording Code) for a media item.
-     */
-    isrc?: string;
-
-    /**
-     * The kind of the media item.
-     */
-    kind?: string;
-
-    /**
-     * The name of the media item.
-     */
-    name: string;
-
-    /**
-     * The playback parameters for the media item.
-     */
-    playParams: PlayParameters;
-
-    /**
-     * The previews for the media item.
-     */
-    previews?: Preview[];
-
-    /**
-     * The release date of the media item.
-     */
-    releaseDate: string;
-
-    /**
-     * The cloud Id for the uploaded media item.
-     */
-    cloudId?: string;
-
-    /**
-     * The status of the media item.
-     */
-    status: keyof typeof MusicKit.PlaybackStates;
-
-    /**
-     * The track number of the media item.
-     */
-    trackNumber?: number;
-    /**
-     * The URL of the media item.
-     */
-    url?: string;
-
-    /**
-     * The editorial kind of the media item.
-     */
-    editorialElementKind?: string
-
-    /**
-     * The description and notes for editorial usage.
-     */
-    editorialNotes?: EditorialNotes
-
-    /**
-     * The editorial artwork for the media item.
-     */
-    editorialArtwork?: EditorialArtwork;
-
-    /**
-     * The editorial elements display style.
-     */
-    displayStyle?: string
-
-    /**
-     * The Url to the artist's page.
-     */
-    artistUrl?: string;
-
-    /**
-     * Undocumented Items, not in the Apple Music API docs, and don't really know what they are.
-     * @undocumented
-     */
-    attribution?: string;
-    contentRating?: ContentRating;
-    hasLyrics: boolean;
-    movementCount?: number;
-    movementName?: string;
-    movementNumber?: number;
-    workName?: string;
-    lastModifiedDate?: string;
-    supportsSings?: boolean;
-    description?: DescriptionAttribute;
-    trackCount?: number;
-    curatorName?: string;
-    curatorSocialHandle?: string;
-    audioTraits?: string[];
-    isChart?: boolean;
-    playlistType?:
-      | "editorial"
-      | "external"
-      | "personal-mix"
-      | "replay"
-      | "user-shared";
-    editorialVideo?: EditorialVideo;
-    versionHash?: string;
-    trackTypes?: Array<"music-videos" | "songs">;
   }
 
   /**
@@ -629,7 +514,10 @@ declare namespace MusicKit {
     };
   }
 
-  // Represents attributes for a podcast episode
+  /**
+   * A resource object that represents a podcast episode.
+   * @undocumented
+   */
   interface PodcastAttributes {
     offers: {
       kind: string;
@@ -898,18 +786,6 @@ declare namespace MusicKit {
     main: { peak: number; range: number; value: number };
   };
 
-  interface PlayParameters {
-    id: string;
-    kind: string;
-    isLibrary?: boolean;
-    globalId?: string;
-    catalogId?: string;
-    reportingId?: string;
-    reporting?: boolean;
-    versionHash?: string;
-    displayType?: number;
-  }
-
   /**
    * An object that represents editorial notes.
    * https://developer.apple.com/documentation/musickit/editorialnotes
@@ -953,7 +829,7 @@ declare namespace MusicKit {
 
   /**
    * An object that represents artwork for a music item.
-   * @Note - This is not documented in the Apple Music API docs.
+   * @undocumented
    */
   type EditorialArtwork = { [key in editorialArtworkTypes]: Artwork };
 
@@ -968,7 +844,7 @@ declare namespace MusicKit {
 
   /**
    * An object that represents the editorial video for a music item.
-   * @Note - This is not documented in the Apple Music API docs.
+   * @undocumented
    */
   interface Video {
     previewFrame: Artwork;
@@ -977,7 +853,7 @@ declare namespace MusicKit {
 
   /**
    * An object that represents an editorial video (animated artwork) for a music item.
-   * @Note - This is not documented in the Apple Music API docs.
+   * @undocumented
    */
   type EditorialVideo = { [key in EditorialVideoTypes]: Video };
 
@@ -1059,23 +935,10 @@ declare namespace MusicKit {
     "/v1/catalog/${storefront}/podcasts/${id}/episodes": MusicKit.PodcastEpisode[];
   }
 
-  type ResourceMap = {
-    songs?: { [key: string]: MusicKit.Songs };
-    albums?: { [key: string]: MusicKit.Albums };
-    artists?: { [key: string]: MusicKit.Artists };
-    playlists?: { [key: string]: MusicKit.Playlists };
-    storefronts?: { [key: string]: MusicKit.Storefronts };
-    "library-playlist-folders"?: { [key: string]: MusicKit.LibraryPlaylists };
-    "library-playlists"?: { [key: string]: MusicKit.LibraryPlaylists };
-    "library-songs"?: { [key: string]: MusicKit.LibrarySongs };
-    "library-albums"?: { [key: string]: MusicKit.LibraryAlbums };
-    "library-artists"?: { [key: string]: MusicKit.Artists };
-    curator?: { [key: string]: MusicKit.Curators };
-    "social-profiles"?: { [key: string]: MusicKit.SocialProfile };
-    "apple-curators"?: { [key: string]: MusicKit.AppleCurators };
-    "credit-artists"?: { [key: string]: MusicKit.CreditArtist };
-    lyrics?: { [key: string]: MusicKit.Lyrics };
-    credits?: { [key: string]: MusicKit.Credit };
+  type QueryResources = {
+    [K in keyof MusicKit.ResourceMap]?: {
+      [key: string]: MusicKit.ResourceMap[K];
+    };
   };
   type ResourceTypes = keyof ResourceMap;
 
@@ -1083,7 +946,7 @@ declare namespace MusicKit {
   interface QueryResponse<T = unknown> {
     data: {
       data: T;
-      resources: ResourceMap;
+      resources: QueryResources;
       results: QueryResult;
       next: string;
       meta: {
