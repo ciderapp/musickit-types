@@ -189,7 +189,7 @@ declare namespace MusicKit {
     /**
      * Relationships of the media item
      */
-    relationships: unknown;
+    relationships: Record<string, Relationship<Resource> | Array<Relationship<Resource>>> | undefined;
 
     /**
      * A Boolean value that indicates whether the item is a cloud upload.
