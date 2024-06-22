@@ -411,6 +411,7 @@ declare namespace MusicKit {
       editorialNotes?: EditorialNotes;
       genreNames: string[];
       isCompilation: boolean;
+      isPrerelease: boolean;
       isComplete: boolean;
       isMasteredForItunes: boolean;
       isSingle: boolean;
