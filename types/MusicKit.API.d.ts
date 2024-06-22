@@ -149,6 +149,7 @@ declare namespace MusicKit {
       workName?: string;
       artistUrl?: string;
       personalRating?: number;
+      inLibrary?: boolean;
     };
     relationships?: {
       albums?: Relationship<Albums>;
@@ -191,6 +192,7 @@ declare namespace MusicKit {
       workName?: string;
       artistUrl?: string;
       personalRating?: number;
+      inLibrary?: boolean;
     };
     relationships: {
       albums: Relationship<Albums>;
@@ -311,6 +313,7 @@ declare namespace MusicKit {
       editorialVideo?: EditorialVideo;
       url: string;
       personalRating?: number;
+      inLibrary?: boolean;
     };
     relationships: {
       artists: Relationship<Artists>;
@@ -503,6 +506,7 @@ declare namespace MusicKit {
       trackTypes: Array<"music-videos" | "songs">;
       tags?: Tags;
       personalRating?: number;
+      inLibrary?: boolean;
     };
     relationships?: {
       curator?: Relationship<Activities | AppleCurators | Curators>;
