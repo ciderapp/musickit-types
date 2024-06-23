@@ -150,6 +150,7 @@ declare namespace MusicKit {
       artistUrl?: string;
       personalRating?: number;
       inLibrary?: boolean;
+      inFavorites?: boolean;
     };
     relationships?: {
       albums?: Relationship<Albums>;
@@ -193,6 +194,7 @@ declare namespace MusicKit {
       artistUrl?: string;
       personalRating?: number;
       inLibrary?: boolean;
+      inFavorites?: boolean;
     };
     relationships: {
       albums: Relationship<Albums>;
@@ -261,6 +263,8 @@ declare namespace MusicKit {
       stationProviderName: string;
       url: string;
       personalRating?: number;
+      inLibrary?: boolean;
+      inFavorites?: boolean;
     };
   }
 
@@ -314,6 +318,7 @@ declare namespace MusicKit {
       url: string;
       personalRating?: number;
       inLibrary?: boolean;
+      inFavorites?: boolean;
     };
     relationships: {
       artists: Relationship<Artists>;
@@ -347,6 +352,7 @@ declare namespace MusicKit {
       trackCount: number;
       genreNames: string[];
       personalRating?: number;
+      inFavorites?: boolean;
     };
     relationships: {
       artists: Relationship<Artists>;
@@ -386,8 +392,8 @@ declare namespace MusicKit {
       url: string;
       workName?: string;
       artistUrl?: string;
-      inFavorites?: boolean;
       personalRating?: number;
+      inFavorites?: boolean;
     };
     relationships?: {
       albums?: Relationship<Albums>;
@@ -420,6 +426,7 @@ declare namespace MusicKit {
       name: string;
       playParams: PlayParameters;
       personalRating?: number;
+      inFavorites?: boolean;
     };
     relationships?: {
       catalog: Relationship<Playlists>;
@@ -439,9 +446,10 @@ declare namespace MusicKit {
       genreNames: string[];
       name: string;
       url: string;
-      inFavorites?: boolean;
       artwork?: Artwork;
       personalRating?: number;
+      inLibrary?: boolean;
+      inFavorites?: boolean;
     };
     relationships: {
       albums: Relationship<Albums>;
@@ -507,6 +515,7 @@ declare namespace MusicKit {
       tags?: Tags;
       personalRating?: number;
       inLibrary?: boolean;
+      inFavorites?: boolean;
     };
     relationships?: {
       curator?: Relationship<Activities | AppleCurators | Curators>;
