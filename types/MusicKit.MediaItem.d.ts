@@ -124,6 +124,12 @@ declare namespace MusicKit {
     artistUrl?: string;
 
     /**
+     * The locale for the media item in the format language_territory.
+     */
+    audioLocale?: string;
+
+
+    /**
      * Undocumented Items, not in the Apple Music API docs, and don't really know what they are.
      * @undocumented
      */

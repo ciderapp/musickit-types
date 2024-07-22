@@ -151,6 +151,7 @@ declare namespace MusicKit {
       personalRating?: number;
       inLibrary?: boolean;
       inFavorites?: boolean;
+      audioLocale?: string;
     };
     relationships?: {
       albums?: Relationship<Albums>;
