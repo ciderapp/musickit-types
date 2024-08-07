@@ -416,6 +416,7 @@ declare namespace MusicKit {
     type: "library-playlists" | "library-playlist-folders";
     attributes?: {
       hasCollaboration?: boolean;
+      lastModifiedDate: string; // in date-time ISO 8601 format
       trackCount?: number;
       canDelete: boolean;
       canEdit: boolean;
