@@ -44,6 +44,10 @@ declare namespace MusicKit {
      */
     readonly storefrontId: string;
     /**
+     * The current storefront country code for the configured MusicKit instance.
+     */
+    readonly storefrontCountryCode: string;
+    /**
      * Private mode is a mode that allows you to play music without song being saved to history.
      */
     privateEnabled: boolean;
