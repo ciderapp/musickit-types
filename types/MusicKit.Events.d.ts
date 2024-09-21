@@ -79,7 +79,7 @@ declare namespace MusicKit {
     /**
      * A notification name indicating the player volume has changed.
      */
-    playbackVolumeDidChange: unknown;
+    playbackVolumeDidChange: Event;
     /**
      * A notification name indicating the playback has started in another context
      * on your domain, and the current player has stopped playback.
