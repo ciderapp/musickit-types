@@ -127,11 +127,12 @@ declare namespace MusicKit {
      * The timed metadata changed.
      */
     timedMetadataDidChange: {
-      title: string;
-      performer: string;
       album: string;
-      _adamId: string;
-      links: {[key: string]: { url: string; }}
+      blob: Blob;
+      links: { description: string, url: string }[];
+      performer: string;
+      storefrontAdamIds: {[id: string]: string};
+      title: string;
     };
 
     /**
