@@ -39,6 +39,7 @@ declare namespace MusicKit {
     lyrics?: MusicKit.Lyrics;
     credits?: MusicKit.Credit;
     catalog?: MusicKit.Playlists;
+    'personal-recommendation': MusicKit.PersonalRecommendation;
   }
 
   /**
@@ -618,6 +619,10 @@ declare namespace MusicKit {
       title: {
         stringForDisplay: string;
       };
+      display?: {
+        kind: string;
+        decorations: unknown[];
+      }
     };
     relationships?: {
       contents: Array<Relationship<Resource>>;
