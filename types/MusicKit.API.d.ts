@@ -959,7 +959,7 @@ declare namespace MusicKit {
 
   type QueryResources = {
     [K in keyof MusicKit.ResourceMap]?: {
-      [key: string]: MusicKit.ResourceMap[K];
+      [id: string]: MusicKit.ResourceMap[K];
     };
   };
   type ResourceTypes = keyof ResourceMap;
