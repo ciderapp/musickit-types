@@ -624,9 +624,10 @@ declare namespace MusicKit {
         decorations: unknown[];
       }
     };
-    relationships?: {
-      contents: Array<Relationship<Resource>>;
-    };
+    relationships?: {[k: string]: {
+      data: Resource[];
+      href: string;
+    }}
   }
 
   /**
