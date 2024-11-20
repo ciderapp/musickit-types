@@ -149,11 +149,11 @@ declare namespace MusicKit {
     audioTraits?: string[];
     isChart?: boolean;
     playlistType?:
-      | "editorial"
-      | "external"
-      | "personal-mix"
-      | "replay"
-      | "user-shared";
+    | "editorial"
+    | "external"
+    | "personal-mix"
+    | "replay"
+    | "user-shared";
     editorialVideo?: EditorialVideo;
     versionHash?: string;
     trackTypes?: Array<"music-videos" | "songs">;
@@ -211,25 +211,46 @@ declare namespace MusicKit {
      */
     prepareToPlay(): Promise<void>;
 
+
     /**
-     * Asset Url for the MediaItem
+     * The URL to the media asset.
      */
     assetURL: string;
 
     /**
-     * The attributes object for the media item.
+     * The attributes for the media item.
      */
     attributes: MediaItemAttributes;
-    channels?: number;
-    cloudId?: string;
-    contentType?: string;
-    dispatchNamespace?: string;
 
     /**
-     * The flavor of the media item. Can be used to determine the bitrate of the media item.
+     * TODO: Unknown type.
+     */
+    channels: unknown;
+
+    /**
+     * The ID for the iCloud item - only applies for uploaded items.
+     */
+    cloudId: string
+
+    /**
+     * The content type for the media item.
+     */
+    contentType: string;
+
+    /**
+     * The dispatch namespace for the media item.
+     */
+    dispatchNamespace: string;
+
+    /**
+     * The flavor of the media item.
      */
     flavor: string;
-    hlsMetadata: unknown;
+
+    /**
+     * Unknown type.
+     */
+    hlsMetadata: {};
 
     /**
      * The URL to the media item.
@@ -242,6 +263,12 @@ declare namespace MusicKit {
     id: string;
 
     /**
+     * Unknown types
+     */
+    keyPlaystartTime: unknown;
+    keyServerQueryParameters: unknown;
+
+    /**
      * Asset URLs for the media item.
      */
     keyURLs?: {
@@ -249,6 +276,31 @@ declare namespace MusicKit {
       "hls-key-server-url": string;
       "widevine-cert-url"?: string;
     };
+
+    /**
+     * Unknown type.
+     */
+    playablables: unknown;
+
+    /**
+     * The playback type of the nowplaying item.
+     */
+    playbackType: number;
+
+    /**
+     * Any item relationships.
+     */
+    relationships: Relationships;
+
+    /**
+     * The info on the current track.
+     */
+    trackInfo: string;
+
+    /**
+     * The type of the media item.
+     */
+    type: string;
 
     /**
      * A string of information about the album.
@@ -294,82 +346,99 @@ declare namespace MusicKit {
 
     /**
      * A string of common information about the media item.
+     * @getter
      */
     info: string;
 
     /**
      * A Boolean value that indicates whether the item has explicit lyrics or language.
+     * @getter
      */
     isExplicitItem: boolean;
 
     /**
      * A Boolean value that indicated whether the item is playable.
+     * @getter
      */
     isPlayable: boolean;
 
     /**
      * A Boolean value indicating whether the media item is prepared to play.
+     * @getter
      */
     isPreparedToPlay: boolean;
 
     /**
      * The ISRC (International Standard Recording Code) for a media item.
+     * @getter
      */
     isrc: string;
 
     /**
      * The playback duration of the media item.
+     * @getter
      */
     playbackDuration: number;
     playlistArtworkURL: string;
     playlistName: string;
 
     /**
-     * Th e URL to an unencrypted preview of the media item.
+     * The URL to an unencrypted preview of the media item.
+     * @getter
      */
     previewURL: string;
 
     /**
      * The release date of the media item.
+     * @getter
      */
     releaseDate?: Date | undefined;
 
     /**
      * The name of the media item.
+     * @getter
      */
     title: string;
 
     /**
      * The number of the media item in the album's track list.
+     * @getter
      */
     trackNumber: number;
 
     /**
-     * The type of the media item.
-     */
-    type: string;
-
-    /**
-     * Relationships of the media item
-     */
-    relationships: Relationships;
-
-    /**
      * A Boolean value that indicates whether the item is a cloud upload.
+     * @getter
      */
     isCloudUpload: boolean;
 
     /**
      * Also the ID of the media item.
+     * @getter
      */
     songId: string;
 
+    /**
+     * The container of the media item. This can be a stations, playlists, or albums.
+     */
+    _container: Container;
+    container: Container; // @getter
+
+    /**
+     * The media assets of the item.
+     */
+    _assets: MediaItemAsset[];
+    assets: MediaItemAsset[]; // @getter
+
+    /**
+     * The context of the media item. Similar to the container.
+     */
+    _context: Context;
+    context: Context; // @getter
+
     // Unknown / Self-Defined Methods
     ageGatePolicy: unknown;
-    assets: MediaItemAsset[];
     canPlay: boolean;
-    container: Container;
-    context: Context;
     defaultPlayable: unknown;
     hasContainerArtwork: string;
     hasOffersHlsUrl: boolean;
