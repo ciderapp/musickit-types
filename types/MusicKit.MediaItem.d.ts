@@ -446,7 +446,7 @@ declare namespace MusicKit {
     isAOD: boolean;
     isAlgoStation: boolean;
     isAssetScrubbingDisabled: boolean;
-    isCloudItem: boolean;
+    isCloudItem?: boolean;
     isEqual: (e: MediaItem) => boolean;
     isLinearStream: boolean;
     isLiveAudioStation: boolean;
