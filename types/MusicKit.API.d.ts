@@ -40,6 +40,8 @@ declare namespace MusicKit {
     credits?: MusicKit.Credit;
     catalog?: Relationship<Playlists>;
     'personal-recommendation': MusicKit.PersonalRecommendation;
+    'stations': MusicKit.Stations;
+    'music-summaries': MusicKit.ReplaySummary
   }
 
   /**
@@ -794,6 +796,28 @@ declare namespace MusicKit {
       melodicness: GenericAudioProperty;
       valence: GenericAudioProperty;
     };
+  }
+
+  /**
+   * A resource object that represents the replay summary for a user.
+   * @undocumented
+   */
+  interface ReplaySummary extends Resource {
+    type: "music-summaries";
+    attributes: {
+      period: 'year' | 'month';
+      year: number;
+      month?: number;
+      topSongCount: number;
+      listenTimeInMinutes: number;
+      uniqueStationCount: number;
+      uniqueGenreCount: number;
+      uniqueAlbumCount: number;
+      uniqueArtistCount: number;
+      uniquePlaylistCount: number;
+      uniqueSongCount: number;
+    }
+
   }
 
   type GenericAudioProperty = {
