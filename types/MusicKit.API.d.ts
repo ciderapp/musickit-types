@@ -824,6 +824,9 @@ declare namespace MusicKit {
       'top-artists': Relationship<Artists>;
       'top-songs': Relationship<Songs>;
     }
+    relationships: {
+      playlist?: Relationship<Playlists>;
+    }
   }
 
   /**
