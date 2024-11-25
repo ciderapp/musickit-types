@@ -820,9 +820,9 @@ declare namespace MusicKit {
       count: number;
     }[]
     views: {
-      'top-albums': Relationship<Albums>;
-      'top-artists': Relationship<Artists>;
-      'top-songs': Relationship<Songs>;
+      'top-albums': Relationship<ReplayItemSummary>;
+      'top-artists': Relationship<ReplayItemSummary>;
+      'top-songs': Relationship<ReplayItemSummary>;
     }
     relationships: {
       playlist?: Relationship<Playlists>;
@@ -855,17 +855,20 @@ declare namespace MusicKit {
   interface ReplayItemSummary extends Resource {
     type: 'song-period-summaries' | 'artist-period-summaries' | 'album-period-summaries';
     attributes: {
-      playCount: number;
       firstPlayed: string;
       lastPlayed: string;
+      playCount: number;
+      listenTimeInMinutes?: number;
     }
     relationships: {
       song?: Relationship<Songs>;
       artist?: Relationship<Artists>;
       album?: Relationship<Albums>;
     }
-
   }
+
+  
+
 
   type GenericAudioProperty = {
     beginning: number;
