@@ -817,6 +817,10 @@ declare namespace MusicKit {
       uniquePlaylistCount: number;
       uniqueSongCount: number;
     }
+    topGenres: {
+      genre: string;
+      count: number;
+    }[]
 
   }
 
