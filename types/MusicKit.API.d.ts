@@ -42,6 +42,7 @@ declare namespace MusicKit {
     'personal-recommendation': MusicKit.PersonalRecommendation;
     'stations': MusicKit.Stations;
     'music-summaries': MusicKit.ReplaySummary
+    'music-summaries-milestones': MusicKit.ReplayMilestone
   }
 
   /**
@@ -85,10 +86,7 @@ declare namespace MusicKit {
     type: string;
     href: string;
     attributes: Record<string, any>;
-    relationships?: Record<
-      string,
-      Relationship<Resource> | Array<Relationship<Resource>>
-    >;
+    relationships?: Record<string, Relationship<Resource> | Array<Relationship<Resource>>>;
     meta?: Record<string, any>;
     views?: Record<string, View<Resource>>;
   }
@@ -821,7 +819,30 @@ declare namespace MusicKit {
       genre: string;
       count: number;
     }[]
+    relationships: {
+      'top-albums': Relationship<Albums>;
+      'top-artists': Relationship<Artists>;
+      'top-songs': Relationship<Songs>;
+    }
+  }
 
+  /**
+   * A resource object that represents the replay milestone for a user.
+   * @undocumented
+   */
+  interface ReplayMilestone extends Resource {
+    type: "music-summaries-milestones",
+    attributes: {
+      listenTimeInMinutes: number;
+      dateReached: string;
+      value: number;
+      kind: 'listen-time' | 'artist' | 'song';
+    }
+    relationships: {
+      'top-albums': Relationship<Albums>;
+      'top-artists': Relationship<Artists>;
+      'top-songs': Relationship<Songs>;
+    }
   }
 
   type GenericAudioProperty = {
