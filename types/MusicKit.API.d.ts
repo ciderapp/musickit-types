@@ -834,7 +834,7 @@ declare namespace MusicKit {
    * @undocumented
    */
   interface ReplayMilestone extends Resource {
-    type: "music-summaries-milestones",
+    type: "music-summaries-milestones";
     attributes: {
       listenTimeInMinutes: number;
       dateReached: string;
@@ -846,6 +846,25 @@ declare namespace MusicKit {
       'top-artists': Relationship<Artists>;
       'top-songs': Relationship<Songs>;
     }
+  }
+
+  /**
+   * A resource object that represents the replay song summary for a user.
+   * @undocumented
+   */
+  interface ReplayItemSummary extends Resource {
+    type: 'song-period-summaries' | 'artist-period-summaries' | 'album-period-summaries';
+    attributes: {
+      playCount: number;
+      firstPlayed: string;
+      lastPlayed: string;
+    }
+    relationships: {
+      song?: Relationship<Songs>;
+      artist?: Relationship<Artists>;
+      album?: Relationship<Albums>;
+    }
+
   }
 
   type GenericAudioProperty = {
@@ -1025,6 +1044,8 @@ declare namespace MusicKit {
       next: string;
       meta: {
         total: number;
+        latestYear: number, 
+        isEndOfYear: boolean
       };
     };
     request: unknown;
