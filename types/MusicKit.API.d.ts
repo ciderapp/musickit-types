@@ -819,7 +819,7 @@ declare namespace MusicKit {
       genre: string;
       count: number;
     }[]
-    relationships: {
+    views: {
       'top-albums': Relationship<Albums>;
       'top-artists': Relationship<Artists>;
       'top-songs': Relationship<Songs>;
