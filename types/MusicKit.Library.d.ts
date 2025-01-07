@@ -1,6 +1,7 @@
 declare namespace MusicKit {
     /**
      * This class represents a user's Cloud Library.
+     * @deprecated
      */
     interface Library {
         /**

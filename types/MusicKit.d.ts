@@ -8,6 +8,7 @@
 declare namespace MusicKit {
   /**
    * A configuration for an app.
+   * [MusicKit.js Documentation](https://js-cdn.music.apple.com/musickit/v3/docs/index.html?path=/docs/reference-javascript-musickit--page)
    */
   interface AppConfiguration {
     /**

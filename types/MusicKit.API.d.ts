@@ -1,14 +1,14 @@
 declare namespace MusicKit {
   /**
    * An object that represents a unique identifier for a music item.
-   * https://developer.apple.com/documentation/musickit/musicitemid
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/musickit/musicitemid)
    */
   type MusicItemID = string;
 
   /**
    * The rating of the content that potentially plays while playing a resource.
    * A nil value means no rating is available for this resource.
-   * https://developer.apple.com/documentation/musickit/contentrating
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/musickit/contentrating)
    */
   type ContentRating = "clean" | "explicit" | null;
 
@@ -54,7 +54,7 @@ declare namespace MusicKit {
 
   /**
    * A to-one or to-many relationship from one resource object to others.
-   * https://developer.apple.com/documentation/applemusicapi/relationship
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/relationship)
    */
   interface Relationship<Data> {
     href?: string;
@@ -65,7 +65,7 @@ declare namespace MusicKit {
 
   /**
    * A to-one or to-many relationship view from one resource object to others representing interesting associations.
-   * https://developer.apple.com/documentation/applemusicapi/view
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/view)
    */
   interface View<Data> {
     href?: string;
@@ -79,7 +79,7 @@ declare namespace MusicKit {
 
   /**
    * A resource—such as an album, song, or playlist.
-   * https://developer.apple.com/documentation/applemusicapi/resource
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/resource)
    */
   interface Resource {
     id: string;
@@ -93,7 +93,7 @@ declare namespace MusicKit {
 
   /**
    * A resource object that represents a storefront, an Apple Music and iTunes Store territory that the content is available in.
-   * https://developer.apple.com/documentation/applemusicapi/storefronts
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/storefronts)
    */
   interface Storefronts extends Resource {
     type: "storefronts";
@@ -107,7 +107,7 @@ declare namespace MusicKit {
 
   /**
    * A resource object that represents a music genre.
-   * https://developer.apple.com/documentation/applemusicapi/genres
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/genres)
    */
   interface Genres extends Resource {
     type: "genres";
@@ -120,7 +120,7 @@ declare namespace MusicKit {
 
   /**
    * A resource object that represents a song.
-   * https://developer.apple.com/documentation/applemusicapi/songs-um8
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/songs-um8)
    */
   interface Songs extends Resource {
     id: MusicItemID;
@@ -168,7 +168,7 @@ declare namespace MusicKit {
 
   /**
    * A resource object that represents a music video.
-   * https://developer.apple.com/documentation/applemusicapi/musicvideos/
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/musicvideos/)
    */
   interface MusicVideos extends Resource {
     id: MusicItemID;
@@ -212,7 +212,7 @@ declare namespace MusicKit {
 
   /**
    * A resource object that represents an Apple curator.
-   * https://developer.apple.com/documentation/applemusicapi/applecurators/
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/applecurators/)
    */
   interface AppleCurators extends Resource {
     type: "apple-curators";
@@ -232,7 +232,7 @@ declare namespace MusicKit {
 
   /**
    * A resource object that represents a curator.
-   * https://developer.apple.com/documentation/applemusicapi/curators-uja
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/curators-uja)
    */
   interface Curators extends Resource {
     type: "curator";
@@ -249,7 +249,7 @@ declare namespace MusicKit {
 
   /**
    * A resource object that represents a station.
-   * https://developer.apple.com/documentation/applemusicapi/stations/
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/stations/)
    */
   interface Stations extends Resource {
     type: "stations";
@@ -272,7 +272,7 @@ declare namespace MusicKit {
 
   /**
    * A resource object that represents a record label.
-   * https://developer.apple.com/documentation/applemusicapi/recordlabels/
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/recordlabels/)
    */
   interface RecordLabels extends Resource {
     id: MusicItemID;
@@ -291,7 +291,7 @@ declare namespace MusicKit {
 
   /**
    * A resource object that represents an album.
-   * https://developer.apple.com/documentation/applemusicapi/albums-uib
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/albums-uib)
    */
   interface Albums extends Resource {
     type: "albums";
@@ -339,7 +339,7 @@ declare namespace MusicKit {
 
   /**
    * A resource object that represents a library album.
-   * https://developer.apple.com/documentation/applemusicapi/libraryalbums/
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/libraryalbums/)
    */
   interface LibraryAlbums extends Resource {
     type: "library-albums";
@@ -365,7 +365,7 @@ declare namespace MusicKit {
 
   /**
    * A resource object that represents a library song.
-   * https://developer.apple.com/documentation/applemusicapi/librarysongs/
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/librarysongs/)
    */
   interface LibrarySongs extends Resource {
     id: MusicItemID;
@@ -410,7 +410,7 @@ declare namespace MusicKit {
 
   /**
    * A resource object that represents a library playlist.
-   * https://developer.apple.com/documentation/applemusicapi/libraryplaylists/
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/libraryplaylists/)
    */
   interface LibraryPlaylists extends Resource {
     id: MusicItemID;
@@ -440,7 +440,7 @@ declare namespace MusicKit {
 
   /**
    * A resource object that represents an artist of an album where an artist can be one or more persons.
-   * https://developer.apple.com/documentation/applemusicapi/artists-uip
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/artists-uip)
    */
   interface Artists extends Resource {
     type: "artists";
@@ -486,7 +486,7 @@ declare namespace MusicKit {
 
   /**
    * A resource object that represents a catalog playlist.
-   * https://developer.apple.com/documentation/applemusicapi/playlists-ulf
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/playlists-ulf)
    */
   interface Playlists extends Resource {
     id: MusicItemID;
@@ -506,11 +506,11 @@ declare namespace MusicKit {
       name: string;
       isChart: boolean;
       playlistType:
-        | "editorial"
-        | "external"
-        | "personal-mix"
-        | "replay"
-        | "user-shared";
+      | "editorial"
+      | "external"
+      | "personal-mix"
+      | "replay"
+      | "user-shared";
       editorialVideo?: EditorialVideo;
       editorialNotes?: EditorialNotes;
       versionHash?: string;
@@ -588,7 +588,7 @@ declare namespace MusicKit {
 
   /**
    * A resource object that represents an activity curator.
-   * https://developer.apple.com/documentation/applemusicapi/activities-ui5
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/activities-ui5)
    */
   interface Activities extends Resource {
     type: "activities";
@@ -605,7 +605,7 @@ declare namespace MusicKit {
 
   /**
    * A resource object that represents recommended resources for a user calculated using their selected preferences.
-   * https://developer.apple.com/documentation/applemusicapi/personalrecommendation
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/personalrecommendation)
    */
   interface PersonalRecommendation extends Resource {
     type: "personal-recommendation";
@@ -624,10 +624,12 @@ declare namespace MusicKit {
         decorations: unknown[];
       }
     };
-    relationships?: {[k: string]: {
-      data: Resource[];
-      href: string;
-    }}
+    relationships?: {
+      [k: string]: {
+        data: Resource[];
+        href: string;
+      }
+    }
   }
 
   /**
@@ -686,12 +688,12 @@ declare namespace MusicKit {
       emphasize?: boolean;
       featureFirstElement?: boolean;
       designBadge?:
-        | "NEW ALBUM"
-        | "UPDATED PLAYLIST"
-        | "LISTEN NOW"
-        | "NEW PLAYLIST"
-        | "NEW RELEASE"
-        | string;
+      | "NEW ALBUM"
+      | "UPDATED PLAYLIST"
+      | "LISTEN NOW"
+      | "NEW PLAYLIST"
+      | "NEW RELEASE"
+      | string;
       displayStyle?: "compact" | "expanded";
       keySwoosh?: "FeaturedPlaylists" | "ArtistsPlaylists" | string;
       doNotFilter?: boolean;
@@ -733,10 +735,10 @@ declare namespace MusicKit {
     type: "role-categories";
     attributes: {
       kind:
-        | "performer"
-        | "composer-and-lyrics"
-        | "production-and-engineering"
-        | string;
+      | "performer"
+      | "composer-and-lyrics"
+      | "production-and-engineering"
+      | string;
       title: string;
     };
     relationships: {
@@ -867,7 +869,7 @@ declare namespace MusicKit {
     }
   }
 
-  
+
 
 
   type GenericAudioProperty = {
@@ -884,7 +886,7 @@ declare namespace MusicKit {
 
   /**
    * An object that represents editorial notes.
-   * https://developer.apple.com/documentation/musickit/editorialnotes
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/musickit/editorialnotes)
    */
   interface EditorialNotes {
     hashValue?: number;
@@ -896,7 +898,7 @@ declare namespace MusicKit {
 
   /**
    * An object that represents artwork for a music item.
-   * https://developer.apple.com/documentation/musickit/artwork
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/musickit/artwork)
    */
   interface Artwork {
     bgColor: string;
@@ -906,23 +908,29 @@ declare namespace MusicKit {
     textColor2: string;
     textColor3: string;
     textColor4: string;
-    url: ArtworkUrl;
+    /**
+     * This type represents the Artwork URL for a music item.
+     * The URL commonly is comprised of variables that can be replaced with the desired values.
+     * These variables can extend to the following: (Bear in mind that some variables may be pre-defined in the URL of the item)
+     * - {w} - The width of the image in pixels.
+     * - {h} - The height of the image in pixels.
+     * - {f} - The format of the image. (See ArtworkFormats)
+     * - {c} - The artwork kind. (See ArtworkKinds)
+     * @example https://example.com/{w}x{h}{c}.{f}
+     * @undocumented
+     */
+    url: string;
     hasP3?: boolean;
   }
 
   /**
-   * This type represents the Artwork URL for a music item.
-   * The URL commonly is comprised of variables that can be replaced with the desired values.
-   * These variables can extend to the following: (Bear in mind that some variables may be pre-defined in the URL of the item)
-   * - {w} - The width of the image in pixels.
-   * - {h} - The height of the image in pixels.
-   * - {f} - The format of the image. (See ArtworkFormats)
-   * - {c} - The artwork kind. (See ArtworkKinds)
-   * @example https://example.com/{w}x{h}{c}.{f}
-   * @undocumented
+   * Artwork kinds for a music item. 
    */
-  type ArtworkUrl = string;
   type ArtworkKinds = 'cc' | 'sr' | 'bb';
+  
+  /**
+   * The format of the artwork for a music item.
+   */
   type ArtworkFormats = 'jpg' | 'jpeg' | 'png' | 'webp' | 'tiff' | 'svg';
 
   /**
@@ -970,7 +978,7 @@ declare namespace MusicKit {
 
   /**
    * An object that represents a preview for resources.
-   * https://developer.apple.com/documentation/applemusicapi/preview
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/preview)
    */
   interface Preview {
     artwork: Artwork;
@@ -980,7 +988,7 @@ declare namespace MusicKit {
 
   /**
    * An object that represents a description attribute.
-   * https://developer.apple.com/documentation/applemusicapi/descriptionattribute/
+   * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/descriptionattribute/)
    */
   interface DescriptionAttribute {
     short: string;
@@ -1026,10 +1034,10 @@ declare namespace MusicKit {
     "v1/me/library/playlists/*": MusicKit.Playlists[];
 
     "v1/me/library/search":
-      | MusicKit.Songs[]
-      | MusicKit.Albums[]
-      | MusicKit.Artists[]
-      | MusicKit.Playlists[];
+    | MusicKit.Songs[]
+    | MusicKit.Albums[]
+    | MusicKit.Artists[]
+    | MusicKit.Playlists[];
 
     "v1/storefronts": MusicKit.Storefronts[];
 
@@ -1062,7 +1070,7 @@ declare namespace MusicKit {
       next: string;
       meta: {
         total: number;
-        latestYear: number, 
+        latestYear: number,
         isEndOfYear: boolean
       };
     };
@@ -1118,6 +1126,7 @@ declare namespace MusicKit {
 
   /**
    * This class represents the Apple Music API.
+   * [MusicKit.js Documentation](https://js-cdn.music.apple.com/musickit/v3/docs/index.html?path=/docs/reference-javascript-api--page)
    */
   interface API {
     /**
@@ -1227,9 +1236,8 @@ declare namespace MusicKit {
      * Fetch one or more charts.
      *
      * @param types An array of chart types.
-     * @param parameters A query parameters object that is serialized and passed
-     * directly to the Apple Music API.
-     * https://developer.apple.com/documentation/applemusicapi/chartresponse
+     * @param parameters A query parameters object that is serialized and passed directly to the Apple Music API.
+     * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/chartresponse)
      */
     charts(
       types: string[],
@@ -1282,9 +1290,8 @@ declare namespace MusicKit {
     /**
      * Fetch the resources in heavy rotation for the user.
      *
-     * @param parameters A query parameters object that is serialized and passed
-     * directly to the Apple Music API.
-     * https://developer.apple.com/documentation/applemusicapi/paginatedresourcecollectionresponse
+     * @param parameters A query parameters object that is serialized and passed directly to the Apple Music API.
+     * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/paginatedresourcecollectionresponse)
      */
     historyHeavyRotation(parameters?: QueryParameters): Promise<{
       next?: string;
@@ -1369,9 +1376,8 @@ declare namespace MusicKit {
      * Search the catalog using a query.
      *
      * @param term The term to search.
-     * @param parameters A query parameters object that is serialized and passed
-     * directly to the Apple Music API.
-     * https://developer.apple.com/documentation/applemusicapi/searchresponse
+     * @param parameters A query parameters object that is serialized and passed directly to the Apple Music API.
+     * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/searchresponse)
      */
     search(
       term: string,
@@ -1409,9 +1415,8 @@ declare namespace MusicKit {
      * Fetch the search term results for a hint.
      *
      * @param term The term to search.
-     * @param parameters A query parameters object that is serialized and passed
-     * directly to the Apple Music API.
-     * https://developer.apple.com/documentation/applemusicapi/searchhintsresponse
+     * @param parameters A query parameters object that is serialized and passed directly to the Apple Music API.
+     * [MusicKit Swift Documentation](https://developer.apple.com/documentation/applemusicapi/searchhintsresponse)
      */
     searchHints(
       term: string,
@@ -1426,8 +1431,7 @@ declare namespace MusicKit {
      * Fetch a song using its identifier.
      *
      * @param id An array of identifier.
-     * @param parameters A query parameters object that is serialized and passed
-     * directly to the Apple Music API.
+     * @param parameters A query parameters object that is serialized and passed directly to the Apple Music API.
      */
     song(id: string, parameters?: QueryParameters): Promise<Songs>;
 
@@ -1435,8 +1439,7 @@ declare namespace MusicKit {
      * Fetch one or more songs using their identifiers.
      *
      * @param ids An array of song identifiers.
-     * @param parameters A query parameters object that is serialized and passed
-     * directly to the Apple Music API.
+     * @param parameters A query parameters object that is serialized and passed directly to the Apple Music API.
      */
     songs(ids: string[], parameters?: QueryParameters): Promise<Songs[]>;
 
@@ -1444,8 +1447,7 @@ declare namespace MusicKit {
      * Fetch a station using its identifier.
      *
      * @param id A station identifier.
-     * @param parameters A query parameters object that is serialized and passed
-     * directly to the Apple Music API.
+     * @param parameters A query parameters object that is serialized and passed directly to the Apple Music API.
      */
     station(id: string, parameters?: QueryParameters): Promise<Stations>;
 
@@ -1453,8 +1455,7 @@ declare namespace MusicKit {
      * Fetch one or more stations using their identifiers.
      *
      * @param ids An array of station identifiers.
-     * @param parameters A query parameters object that is serialized and passed
-     * directly to the Apple Music API.
+     * @param parameters A query parameters object that is serialized and passed directly to the Apple Music API.
      */
     stations(ids: string[], parameters?: QueryParameters): Promise<Stations[]>;
 
@@ -1462,8 +1463,7 @@ declare namespace MusicKit {
      * Fetch a storefront using its identifier.
      *
      * @param id A storefront identifier.
-     * @param parameters A query parameters object that is serialized and passed
-     * directly to the Apple Music API.
+     * @param parameters A query parameters object that is serialized and passed directly to the Apple Music API.
      */
     storefront(id: string, parameters?: QueryParameters): Promise<Storefronts>;
 
@@ -1471,8 +1471,7 @@ declare namespace MusicKit {
      * Fetch one or more storefronts using their identifiers.
      *
      * @param ids An array of storefront identifiers.
-     * @param parameters A query parameters object that is serialized and passed
-     * directly to the Apple Music API.
+     * @param parameters A query parameters object that is serialized and passed directly to the Apple Music API.
      */
     storefronts(
       ids: string[],

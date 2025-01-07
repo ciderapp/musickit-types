@@ -1,7 +1,7 @@
 declare namespace MusicKit {
     /**
-     * A class that describes an error that may occur when using MusicKit JS,
-     * including server and local errors.
+     * A class that describes an error that may occur when using MusicKit JS, including server and local errors.
+     * [MusicKit.js Documentation](https://js-cdn.music.apple.com/musickit/v3/docs/index.html?path=/docs/reference-javascript-mkerror--page)
      */
     class MKError extends Error {
         /**

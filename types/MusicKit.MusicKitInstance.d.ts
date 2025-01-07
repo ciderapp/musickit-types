@@ -2,6 +2,7 @@ declare namespace MusicKit {
   /**
    * This object provides access to a player instance, and through the player
    * instance, access to control playback.
+   * [MusicKit.js Documentation](https://js-cdn.music.apple.com/musickit/v3/docs/index.html?path=/docs/reference-javascript-musickit-instance--page)
    */
   interface MusicKitInstance extends Player {
     capabilities: any;

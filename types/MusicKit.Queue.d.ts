@@ -16,6 +16,7 @@ declare namespace MusicKit {
 
     /**
      * An array of media items to be played.
+     * [MusicKit.js Documentation](https://js-cdn.music.apple.com/musickit/v3/docs/index.html?path=/docs/reference-javascript-queue--page)
      */
     interface Queue {
         /**
