@@ -923,7 +923,7 @@ declare namespace MusicKit {
    */
   type ArtworkUrl = string;
   type ArtworkKinds = 'cc' | 'sr' | 'bb';
-  type ArtworkFormats = 'jpg' | 'jpeg' | 'png' | 'webp' | 'tiff'
+  type ArtworkFormats = 'jpg' | 'jpeg' | 'png' | 'webp' | 'tiff' | 'svg';
 
   /**
    * The type of editorial artwork for a music item.
