@@ -913,7 +913,7 @@ declare namespace MusicKit {
   /**
    * The type of editorial artwork for a music item.
    */
-  type editorialArtworkTypes =
+  type EditorialArtworkTypes =
     | "superHeroTall"
     | "storeFlowcase"
     | "subscriptionHero"
@@ -927,7 +927,7 @@ declare namespace MusicKit {
    * An object that represents artwork for a music item.
    * @undocumented
    */
-  type EditorialArtwork = { [key in editorialArtworkTypes]: Artwork };
+  type EditorialArtwork = { [key in EditorialArtworkTypes]: Artwork };
 
   /**
    * The types of editorial videos for a music item.
