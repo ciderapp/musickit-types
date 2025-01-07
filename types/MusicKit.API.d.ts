@@ -906,9 +906,24 @@ declare namespace MusicKit {
     textColor2: string;
     textColor3: string;
     textColor4: string;
-    url: string;
+    url: ArtworkUrl;
     hasP3?: boolean;
   }
+
+  /**
+   * This type represents the Artwork URL for a music item.
+   * The URL commonly is comprised of variables that can be replaced with the desired values.
+   * These variables can extend to the following: (Bear in mind that some variables may be pre-defined in the URL of the item)
+   * - {w} - The width of the image in pixels.
+   * - {h} - The height of the image in pixels.
+   * - {f} - The format of the image. (See ArtworkFormats)
+   * - {c} - The artwork kind. (See ArtworkKinds)
+   * @example https://example.com/{w}x{h}{c}.{f}
+   * @undocumented
+   */
+  type ArtworkUrl = string;
+  type ArtworkKinds = 'cc' | 'sr' | 'bb';
+  type ArtworkFormats = 'jpg' | 'jpeg' | 'png' | 'webp' | 'tiff'
 
   /**
    * The type of editorial artwork for a music item.
