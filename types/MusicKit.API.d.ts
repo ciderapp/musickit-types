@@ -939,13 +939,13 @@ declare namespace MusicKit {
    */
   type EditorialArtworkTypes =
     | "superHeroTall"
+    | "superHeroWide"
     | "storeFlowcase"
     | "subscriptionHero"
     | "subscriptionCover"
     | "staticDetailSquare"
     | "staticDetailTall"
-    | "brandLogo"
-    | "superHeroWide";
+    | "brandLogo";
 
   /**
    * An object that represents artwork for a music item.
@@ -959,6 +959,7 @@ declare namespace MusicKit {
   type EditorialVideoTypes =
     | "motionSquareVideo1x1"
     | "motionTallVideo3x4"
+    | "motionWideVideo21x9"
     | "motionDetailTall"
     | "motionDetailSquare";
 
