@@ -43,6 +43,7 @@ declare namespace MusicKit {
     'stations': MusicKit.Stations;
     'music-summaries': MusicKit.ReplaySummary
     'music-summaries-milestones': MusicKit.ReplayMilestone
+    'editorial-items': MusicKit.EditorialItem
   }
 
   /**
@@ -668,10 +669,8 @@ declare namespace MusicKit {
    * A resource object that represents a room
    * @undocumented
    */
-  interface Rooms {
+  interface Rooms extends Resource {
     type: "rooms";
-    href: string;
-    id: string;
   }
 
   /**
@@ -710,9 +709,45 @@ declare namespace MusicKit {
     id: "default" | string;
     relationships: {
       children: Relationship<EditorialElements>;
-      contents?: Relationship<MediaItem> | Relationship<Resource>;
+      contents?: Relationship<Resource>;
       room?: Relationship<Rooms>;
     };
+  }
+
+  /**
+   * A resource object that represents an editorial item
+   * @undocumented
+   */
+  interface EditorialItem extends Resource {
+    type: "editorial-items";
+    attributes: {
+      plainEditorialNotes: EditorialNotes
+      plainEditorialCard: PlainEditorialCard
+      editorialArtwork: EditorialArtwork
+      editorialVideo: EditorialVideo
+      link: {
+        url: string
+        target: "internal" | "external"
+        feature: "internal" | "external"
+      }
+      url: string
+    }
+    meta?: {
+      editorialCard: string;
+    }
+  }
+
+  interface PlainEditorialCard {
+    [key: string]: {
+      kind: EditorialArtworkTypes
+      display: {
+        decorations: 'gradient' | unknown[]
+      }
+      plainEditorialNotes: EditorialNotes
+      editorialArtwork: EditorialArtwork
+      editorialVideo: EditorialVideo
+
+    }
   }
 
   /**
