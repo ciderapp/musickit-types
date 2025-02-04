@@ -961,8 +961,9 @@ declare namespace MusicKit {
   /**
    * Artwork kinds for a music item. 
    * - br: Artwork blur map(ish)
+   * - vf: Used for Artist banners
    */
-  type ArtworkKinds = 'cc' | 'sr' | 'bb' | 'br'
+  type ArtworkKinds = 'cc' | 'sr' | 'bb' | 'br' | 'vf'
   
   /**
    * The format of the artwork for a music item.
