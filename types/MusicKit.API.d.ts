@@ -1127,7 +1127,6 @@ declare namespace MusicKit {
     };
     request: unknown;
     response: unknown;
-    results: Suggestion[];
   }
 
   interface QueryResult {
@@ -1143,6 +1142,7 @@ declare namespace MusicKit {
     stations?: SearchResult<Stations>;
     songs?: SearchResult<Songs>;
     badgingMap?: SearchResult<unknown>;
+    suggestions?: Suggestion[];
     top?: {
       data: Array<
         | Activities
