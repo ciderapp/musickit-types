@@ -905,6 +905,16 @@ declare namespace MusicKit {
   }
 
 
+  /**
+   * An object that represents a suggestion returned from search calls
+   */
+  interface Suggestion {
+    displayTerm?: string;
+    kind: 'terms' | 'topResults';
+    searchTerm?: string;
+    source?: string;
+    content?: MusicKit.Resource
+  }
 
 
   type GenericAudioProperty = {
@@ -1110,10 +1120,14 @@ declare namespace MusicKit {
         total: number;
         latestYear: number,
         isEndOfYear: boolean
+        metrics?: {
+          dataSetId: string;
+        }
       };
     };
     request: unknown;
     response: unknown;
+    results: Suggestion[];
   }
 
   interface QueryResult {
